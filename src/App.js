@@ -5,10 +5,11 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Login from './components/Login'
 import Signup from './components/Signup'
+import { api } from './services/api'
 import './App.css';
 
 const INITIAL_STATE = {
-  user: null,
+  user: {},
   objectives: [],
   goals: []
 }
@@ -16,156 +17,98 @@ const INITIAL_STATE = {
 class App extends Component {
   state = INITIAL_STATE
 
-// Lifecycle Methods
+  // Lifecycle Methods
   componentDidMount() {
-    let localUser = localStorage.getItem('username')
-    if (localUser) this.login(localUser)
+    api.auth.getCurrentUser().then(user => {
+      console.log(user)
+      if (!user.error) {
+        this.setState({user: {id: user.id, username: user.username, fullname: user.fullname}})
+      }
+    })
   }
 
-// User Management 
-login = username => {
-  this.getUser(username)
-  //.then(console.log(user))
-  .then(this.buildState)
-}
+  // User Management 
+  login = data => {
+    api.auth.login(data).then( user => {
+      localStorage.setItem("token", user.jwt)
+      this.setState({user: {id: user.id, username: user.username, fullname: user.fullname}})
+    })
+  }
 
-logout = () => {
-  this.setState(INITIAL_STATE)
-  localStorage.removeItem('username')
-}
+  logout = () => {
+    this.setState(INITIAL_STATE)
+    localStorage.removeItem('token')
+  }
 
-signup = user =>
-  this.postUser(user)
-  //.then(console.log(user))
-  .then(this.buildState) 
-
-
-// Fetches
-  getUser = user =>
-    fetch(`http://localhost:4000/users/${user.id}`)
-      .then(r => r.json())
-  postUser = user => 
-    fetch("http://localhost:4000/users", {
-      method: "POST",
-      headers: {"Content-Type": "application/json", "Accept": "application/json"},
-      body: JSON.stringify({user: user}) 
-    }).then(r => r.json())
-  patchUser = user => 
-    fetch(`http://localhost:4000/users/${user.id}`, {
-      method: "PATCH",
-      headers: {"Content-Type": "application/json", "Accept": "application/json"},
-      body: JSON.stringify({user: user})
-    }).then(r => r.json())  
-  deleteUser = user => 
-    fetch(`http://localhost:4000/users/${user.id}`, {
-      method: "DELETE",
-      headers: {"Content-Type": "application/json", "Accept": "application/json"}
-    }).then(r => r.json())
-  getObjectives = () =>
-    fetch("http://localhost:4000/objectives")
-      .then(r => r.json())
-  postObjective = objective => 
-    fetch("http://localhost:4000/objectives", {
-      method: "POST",
-      headers: {"Content-Type": "application/json", "Accept": "application/json"},
-      body: JSON.stringify(objective) 
-    }).then(r => r.json())
-  patchObjective = objective => 
-    fetch(`http://localhost:4000/objectives/${objective.id}`, {
-      method: "POST",
-      headers: {"Content-Type": "application/json", "Accept": "application/json"},
-      body: JSON.stringify(objective) 
-    }).then(r => r.json())
-  deleteObjective = objective => 
-    fetch(`http://localhost:4000/objectives/${objective.id}`, {
-      method: "DELETE",
-      headers: {"Content-Type": "application/json", "Accept": "application/json"}
-    }).then(r => r.json())
-  // getGoals = () =>
-  //   fetch("http://localhost:4000/goals")
-  //     .then(r => r.json())
-  // postGoal = goal => 
-  //   fetch("http://localhost:4000/goals", {
-  //     method: "POST",
-  //     headers: {"Content-Type": "application/json", "Accept": "application/json"},
-  //     body: JSON.stringify(goal) 
-  //   }).then(r => r.json())
-  // patchGoal = goal => 
-  //   fetch(`http://localhost:4000/goals/${goal.id}`, {
-  //     method: "POST",
-  //     headers: {"Content-Type": "application/json", "Accept": "application/json"},
-  //     body: JSON.stringify(goal) 
-  //   }).then(r => r.json())
-  // deleteGoal = goal => 
-  //   fetch(`http://localhost:4000/goals/${goal.id}`, {
-  //     method: "DELETE",
-  //     headers: {"Content-Type": "application/json", "Accept": "application/json"}
-  //   }).then(r => r.json())
-
+  // signup = data => {
+  //   api.auth.postUser(data).then( user => {
+  //     localStorage.setItem("token", user.jwt)
+  //     this.setState({user: {id: user.id, username: user.username, fullname: user.fullname}})
+  //   })  
+  // }
+    
 
   //Building State Function(s) 
-    buildState = (data) => {
-      console.log("the page is loaded let's make some dreams come true!")
-      // if (data) {}
-      // .then(data => ...) 
-        this.setState({
-          user: data,
-          objectives: data,
-          goals: data
-        })
-        localStorage.setItem('username', data.username)
-    }
-  
+  buildState = (data) => {
+    //console.log("the page is loaded let's make some dreams come true!")
+    // if (data) {}
+    // .then(data => ...) 
+    this.setState({
+      user: data,
+      objectives: data,
+      goals: data
+    })
+    localStorage.setItem('user', data.user)
+  }
 
-    render() {
-      return (
-        <Router>
-          <div className="App">
-            <Navbar 
+
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <Navbar
             user={this.state.user}
             onLogout={this.logout}
-            />
-              <header className="App-header">
-              
-                {/* <img src={Sky} className="App-logo" alt="" /> */}
+          />
+          <header className="App-header">
 
-                <Route path="/"  
-                  render={() => 
-                    <Home 
-                    user={this.state.user}
-                    // onRedirected={this.redirected}
-                    />
-                  }
+            {/* <img src={Sky} className="App-logo" alt="" /> */}
+
+            <Route path="/" exact
+              render={() =>
+                <Home
+                  user={this.state.user}
                 />
-                <Route path="/objectives" exact  
-                  render={() => 
-                    <ObjectivesContainer 
-                    user={this.state.user}
-                    // onRedirected={this.redirected}
-                    />
-                  }
+              }
+            />
+            <Route path="/objectives" exact
+              render={() =>
+                <ObjectivesContainer
+                  user={this.state.user}
                 />
-                <Route path="/login" exact
-                  render={() => 
-                    <Login
-                    // redirect={redirect} 
-                    onLogin={this.login}
-                    />
-                  }
+              }
+            />
+            <Route path="/login" exact
+              render={props =>
+                <Login
+                  {...props}
+                  onLogin={this.login}
                 />
-                <Route path="/signup" exact
-                  render={() => 
-                    <Signup 
-                      // redirect={redirect}
-                      onSignup={this.signup}
-                    />
-                  }
+              }
+            />
+            <Route path="/signup" exact
+              render={props =>
+                <Signup
+                  {...props}
+                  onLogin={this.login}
                 />
-              </header>
-            </div>
-        </Router>
-      );
-    }
+              }
+            />
+          </header>
+        </div>
+      </Router>
+    );
+  }
 
 
 

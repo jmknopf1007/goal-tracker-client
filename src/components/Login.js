@@ -19,15 +19,15 @@ handleChange = e =>
     this.setState({[e.target.name]: e.target.value})
 
   handleClick = () => {
-    if (this.state.username && this.state.password) 
-      this.props.onLogin(this.state.username && this.state.password)
+      this.props.onLogin(this.state)
+      this.props.history.push('/') 
   }
 
   render() {
     let {username, password} = this.state
     return (
       <div className="home">
-        {/* {this.props.redirect ? <Redirect to='/' /> : null} */}
+        {this.props.redirect ? <Redirect to='/' /> : null}
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
           <Grid.Column style={{ maxWidth: 450 }}>
             <Header as='h1' inverted textAlign='center'>

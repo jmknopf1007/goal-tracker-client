@@ -17,7 +17,7 @@ class Home extends Component {
                     <Grid.Column className="homecontent">
                         <div className="homeimage"></div>
                         <div className="homespacer"></div>
-                        {user ? (
+                        {user.id ? (
                             <></>
                         ) : (
                             <div className="homebuttonbox">
