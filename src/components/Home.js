@@ -10,6 +10,9 @@ class Home extends Component {
         let {user} = this.props
         return (
             <div className="home">
+                <h1>
+                Welcome to Goal Tracker!
+                </h1>
                 <Grid className="homebox" verticalAlign='middle'>
                     <Grid.Column className="homecontent">
                         <div className="homeimage"></div>

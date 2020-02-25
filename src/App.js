@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import ObjectivesContainer from './containers/ObjectivesContainer'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Login from './components/Login'
 import Signup from './components/Signup'
-//import Sky from './sky-photo-314703.jpeg'
 import './App.css';
 
 const INITIAL_STATE = {
@@ -31,15 +31,16 @@ login = username => {
 
 logout = () => {
   this.setState(INITIAL_STATE)
-  // localStorage.removeItem('username')
+  localStorage.removeItem('username')
 }
 
 signup = user =>
   this.postUser(user)
-  .then(console.log(user))
+  //.then(console.log(user))
+  .then(this.buildState) 
 
 
-  // Fetches
+// Fetches
   getUser = user =>
     fetch(`http://localhost:4000/users/${user.id}`)
       .then(r => r.json())
@@ -80,31 +81,39 @@ signup = user =>
       method: "DELETE",
       headers: {"Content-Type": "application/json", "Accept": "application/json"}
     }).then(r => r.json())
-  getGoals = () =>
-    fetch("http://localhost:4000/goals")
-      .then(r => r.json())
-  postGoal = goal => 
-    fetch("http://localhost:4000/goals", {
-      method: "POST",
-      headers: {"Content-Type": "application/json", "Accept": "application/json"},
-      body: JSON.stringify(goal) 
-    }).then(r => r.json())
-  patchGoal = goal => 
-    fetch(`http://localhost:4000/goals/${goal.id}`, {
-      method: "POST",
-      headers: {"Content-Type": "application/json", "Accept": "application/json"},
-      body: JSON.stringify(goal) 
-    }).then(r => r.json())
-  deleteGoal = goal => 
-    fetch(`http://localhost:4000/goals/${goal.id}`, {
-      method: "DELETE",
-      headers: {"Content-Type": "application/json", "Accept": "application/json"}
-    }).then(r => r.json())
+  // getGoals = () =>
+  //   fetch("http://localhost:4000/goals")
+  //     .then(r => r.json())
+  // postGoal = goal => 
+  //   fetch("http://localhost:4000/goals", {
+  //     method: "POST",
+  //     headers: {"Content-Type": "application/json", "Accept": "application/json"},
+  //     body: JSON.stringify(goal) 
+  //   }).then(r => r.json())
+  // patchGoal = goal => 
+  //   fetch(`http://localhost:4000/goals/${goal.id}`, {
+  //     method: "POST",
+  //     headers: {"Content-Type": "application/json", "Accept": "application/json"},
+  //     body: JSON.stringify(goal) 
+  //   }).then(r => r.json())
+  // deleteGoal = goal => 
+  //   fetch(`http://localhost:4000/goals/${goal.id}`, {
+  //     method: "DELETE",
+  //     headers: {"Content-Type": "application/json", "Accept": "application/json"}
+  //   }).then(r => r.json())
 
-    //Building State Functions
+
+  //Building State Function(s) 
     buildState = (data) => {
-      console.log("the page is loaded let's make some dreams come true")
+      console.log("the page is loaded let's make some dreams come true!")
       // if (data) {}
+      // .then(data => ...) 
+        this.setState({
+          user: data,
+          objectives: data,
+          goals: data
+        })
+        localStorage.setItem('username', data.username)
     }
   
 
@@ -117,19 +126,25 @@ signup = user =>
             onLogout={this.logout}
             />
               <header className="App-header">
-              <h1>
-                Welcome to Goal Tracker!
-                </h1>
+              
                 {/* <img src={Sky} className="App-logo" alt="" /> */}
 
-                  <Route path="/"  
-                    render={() => 
-                      <Home 
-                      user={this.state.user}
-                      // onRedirected={this.redirected}
-                      />
-                    }
-                  />
+                <Route path="/"  
+                  render={() => 
+                    <Home 
+                    user={this.state.user}
+                    // onRedirected={this.redirected}
+                    />
+                  }
+                />
+                <Route path="/objectives" exact  
+                  render={() => 
+                    <ObjectivesContainer 
+                    user={this.state.user}
+                    // onRedirected={this.redirected}
+                    />
+                  }
+                />
                 <Route path="/login" exact
                   render={() => 
                     <Login
@@ -157,3 +172,4 @@ signup = user =>
 }
 
 export default App;
+
