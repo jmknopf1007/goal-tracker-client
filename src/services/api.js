@@ -3,43 +3,48 @@ const API_ROOT = 'http://localhost:4000';
 const token = () => localStorage.getItem("token")
 
 const headers = () => {
-    return {
-        "Content-Type": 'application/json',
-        "Accept": 'application/json',
-        "Authorization": token()
-    }
+  return {
+    "Content-Type": 'application/json',
+    "Accept": 'application/json',
+    "Authorization": token()
+  }
 }
 
 const login = data => { //data needs to have EXACTLY a username and a password
-    return fetch(`${API_ROOT}/api/v1/auth`, {
-        method: 'POST',
-        headers: headers(),
-        body: JSON.stringify(data)
-    }).then(res => res.json())
+  return fetch(`${API_ROOT}/api/v1/auth`, {
+    method: 'POST',
+    headers: headers(),
+    body: JSON.stringify(data)
+  }).then(res => res.json())
 }
 
 const getCurrentUser = () => {
-    return fetch(`${API_ROOT}/api/v1/current_user`, {
-      headers: headers()
-    }).then(res => res.json())
+  return fetch(`${API_ROOT}/api/v1/current_user`, {
+    headers: headers()
+  }).then(res => res.json())
 }
 
-const postUser = user => 
+const postUser = user =>
   fetch(`${API_ROOT}/users`, {
     method: "POST",
-    headers: {"Content-Type": "application/json", "Accept": "application/json"},
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
     body: JSON.stringify(user)
   }).then(r => r.json())
 
-export const api = {
-    auth: {
-        login,
-        getCurrentUser,
-        postUser
-    },
-    objective: {
+const getObjectives = user => {
+  return fetch(`${API_ROOT}/users/${user.id}/objectives`)
+    .then(r => r.json())
+}
 
-    }
+export const api = {
+  auth: {
+    login,
+    getCurrentUser,
+    postUser
+  },
+  data: {
+    getObjectives
+  }
 }
 
 // Fetches

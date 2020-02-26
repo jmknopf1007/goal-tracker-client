@@ -53,7 +53,8 @@ handleChange = e =>
                 onChange={this.handleChange}
               />
               <Button 
-                color='teal' 
+                color='teal'
+                //type="button" 
                 fluid 
                 size='large'
                 onClick={this.handleClick}

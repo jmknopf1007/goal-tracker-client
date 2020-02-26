@@ -3,7 +3,8 @@ import { Menu } from 'semantic-ui-react'
 import {NavLink} from 'react-router-dom'
 
 
-const Navbar = ({user, onLogout}, props) => {
+const Navbar = ({user, onLogout}) => {
+
     const handleClick = () =>
         onLogout()
     
@@ -12,7 +13,7 @@ const Navbar = ({user, onLogout}, props) => {
             <Menu.Item as={NavLink} exact to='/'>Home</Menu.Item>
             {user.id ? (
                 <>
-                    <Menu.Item as={NavLink} exact to='/objectives/'>Objectives</Menu.Item>
+                    <Menu.Item as={NavLink} exact to={`/users/${user.id}/objectives`}>Objectives</Menu.Item>
                     <Menu.Item position="right">Welcome, {user.fullname}!</Menu.Item>
                     <Menu.Item onClick={handleClick}>Logout</Menu.Item>
                 </>
