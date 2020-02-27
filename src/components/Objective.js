@@ -12,10 +12,11 @@ const Objective = ({ objective }) => {
                     {/* {objective.created_at} */}
                 </li>
             </ul>
-            <Button>Edit Objective</Button>
             <Link to={`/users/objectives/${objective.id}/goals`}>
-                <Button>View Goals</Button>
+                <Button>Goals</Button>
             </Link>
+            <Button>✎</Button>
+            <Button>✓</Button>
         </div>
     )
 }

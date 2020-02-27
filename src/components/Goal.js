@@ -7,13 +7,15 @@ const Goal = ({ goal }) => {
         <div className="goal-content">  
             <ul>
                 <li>
-                    {goal.description}
+                    {goal.description}--
                     {goal.category}
-                    {goal.day_count}
+                    {/* Day Counter--{goal.day_count} */}
                 </li>
             </ul>
-            <Button>Edit Goal</Button>
-            <Button>Mark Complete</Button>
+                <div>
+                    <Button>✎</Button>
+                    <Button>✓</Button>
+                </div>
         </div>
     )
 }

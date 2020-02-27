@@ -42,7 +42,6 @@
 
 .objective-container {
   background-color: #551A8B;
-  /* background-color: coral; */
   height: 100vh;
   width: 100vh;
   border: white;
@@ -50,6 +49,18 @@
 }
 
 .objective-content {
+  text-align: left;
+}
+
+.goal-container {
+  background-color: #cd5b45;
+  height: 100vh;
+  width: 100vh;
+  border: white;
+  border-width: medium;
+}
+
+.goal-content {
   text-align: left;
 }
 

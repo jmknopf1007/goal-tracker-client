@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import {Grid, Button} from 'semantic-ui-react'
-import Solar from '../sky-photo-314703.jpeg'
+import Sky from '../sky-photo-314703.jpeg'
 
 
 class Home extends Component {
@@ -13,11 +13,8 @@ class Home extends Component {
         return (
             <div className="home">
 
-                <img src={Solar} className="App-logo" alt="" />
-                    <h1>
-                    Welcome to Goal Tracker!
-                    {/* Make your dreams a reality. */}
-                    </h1>
+                <img src={Sky} className="App-logo" alt="" />
+                {user.id ? <h1>Make your dreams a reality!</h1> : <h1>Welcome to Goal Tracker!</h1> }
                         <Grid className="homebox" verticalAlign='middle'>
                             <Grid.Column className="homecontent">
                                 <div className="homeimage"></div>

@@ -31,6 +31,22 @@ const postUser = user =>
     body: JSON.stringify(user)
   }).then(r => r.json())
 
+const postObjective = (objective) => {
+  fetch(`${API_ROOT}/users/objectives`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify(objective)
+  }).then(r => r.json())
+}
+
+const postGoal = (objective, goal) => {
+  fetch(`${API_ROOT}/users/objectives/${objective.id}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify(goal)
+  }).then(r => r.json())
+}
+
 // const getObjectives = user => {
 //   return fetch(`${API_ROOT}/users/${user.id}/objectives`)
 //     .then(r => r.json())
@@ -47,11 +63,13 @@ export const api = {
     login,
     getCurrentUser,
     postUser
+  },
+  data: {
+    postObjective,
+    postGoal
+    // getObjectives,
+    // getGoals
   }
-  // data: {
-  //   // getObjectives,
-  //   // getGoals
-  // }
 }
 
 // Initial Fetches

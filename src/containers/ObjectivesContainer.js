@@ -1,6 +1,6 @@
 import React from 'react'
 import Objective from '../components/Objective'
-import {Button} from 'semantic-ui-react'
+import CreateObjectiveModal from '../components/CreateObjectiveModal'
 
 //import {Redirect} from 'react-router-dom'
 
@@ -26,9 +26,11 @@ const ObjectivesContainer = ({ user, user: {objectives} }) => {
            
             <h2>Current Objectives:</h2>
            
-            <Button>Add New Objective</Button>
+            {/* <Button>✛  Objective</Button> */}
+            {/* <Modal trigger={<Button>✛ Objective</Button>}></Modal> */}
+            <CreateObjectiveModal />
 
-            {showObjectives()}
+            {user.id ? showObjectives() : null}
         </div>
     )
 

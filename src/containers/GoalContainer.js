@@ -1,10 +1,12 @@
 import React from 'react'
 import Goal from '../components/Goal'
 import {Button} from 'semantic-ui-react'
+import CreateGoalModal from '../components/CreateGoalModal'
+
 
 //import {Redirect} from 'react-router-dom'
 
-const GoalContainer = ({user, match: {params}}) => {
+const GoalContainer = ({user, user: {objective}, match: {params}}) => {
 
     // console.log(props)
 
@@ -27,9 +29,12 @@ const GoalContainer = ({user, match: {params}}) => {
     return (
         <div className="goal-container">
            
+            {/* <h2>{`Current Goals: ${objective.title}`}</h2> */}
             <h2>Current Goals:</h2>
+
            
-            <Button>Add New Goal</Button>
+            {/* <Button>✛  Goal</Button> */}
+            <CreateGoalModal />
             
             {user.id ? showGoals() : null}
         </div>
