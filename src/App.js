@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ObjectivesContainer from './containers/ObjectivesContainer'
+import GoalContainer from './containers/GoalContainer'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Login from './components/Login'
@@ -9,9 +10,7 @@ import { api } from './services/api'
 import './App.css';
 
 const INITIAL_STATE = {
-  user: {},
-  objectives: [],
-  goals: []
+  user: {}
 }
 
 class App extends Component {
@@ -26,19 +25,21 @@ class App extends Component {
   // User Management ###########################
 
   currentUser = () => {
-    api.auth.getCurrentUser().then(user => {
+    api.auth.getCurrentUser().then(data => {
       //console.log(user)
-      if (!user.error) {
-        this.setState({ user: { id: user.id, username: user.username, fullname: user.fullname } }, () => this.loadObjectives())
+      if (!data.error) {
+        this.setState({ user: data.user})
+        // this.setState({ user: { id: user.id, username: user.username, fullname: user.fullname } }, () => this.loadObjectives(), () => this.loadGoals())
       }
     })
   }
 
 
-  login = data => {
-    api.auth.login(data).then(user => {
-      localStorage.setItem("token", user.jwt)
-      this.setState({ user: { id: user.id, username: user.username, fullname: user.fullname } }, () => this.loadObjectives())
+  login = user => {
+    api.auth.login(user).then(data => {
+      localStorage.setItem("token", data.jwt)
+      this.setState({user: data.user})
+      // this.setState({ user: { id: user.id, username: user.username, fullname: user.fullname } }, () => this.loadObjectives(), () => this.loadGoals())
     })
   }
 
@@ -49,35 +50,44 @@ class App extends Component {
 
   // Building State Function(s) ###########################
 
-  loadObjectives = () => {
-    api.data.getObjectives(this.state.user)
-      .then(data => {
-        console.log(data)
-        if (!data.error) {
-
-          this.setState({ objectives: data.objectives }, console.log(this.state))
-        }
-      })
-  }
-
   // loadObjectives = () => {
-  //   api.data.getObjectives(this.state.objectives)
+  //   api.data.getObjectives(this.state.user)
   //     .then(data => {
-  //       this.setState({
-  //         objectives: data.user.objectives 
-  //       })
-  //       console.log(this.state.objectives)
+  //       //console.log(data)
+  //       if (!data.error) {
+  //         this.setState({ objectives: data.objectives })
+  //       }
+  //     })
+  // }
+
+  // loadGoals = () => {
+  //   api.data.getGoals(this.state.user, this.state.objectives)
+  //   .then(data => {
+  //     console.log(data)
+  //     if (!data.error) {
+  //       this.setState({ goals: data.goals })
+  //     }
   //   })
+  // }
+
+  // loadData = () => {
+  //   this.loadObjectives()
+  //   this.loadGoals()
   // }
 
   render() {
     return (
       <Router>
         <div className="App">
-          <Navbar
-            user={this.state.user}
-            onLogout={this.logout}
-          />
+          <Route path="/"
+          render={props =>
+            <Navbar
+              {...props}
+              user={this.state.user}
+              onLogout={this.logout}
+              />
+            }
+            />
           <header className="App-header">
 
             <Route path="/" exact
@@ -87,12 +97,18 @@ class App extends Component {
                 />
               }
             />
-            <Route path="/users/:id/objectives" exact
+            <Route path="/users/objectives" exact
               render={() =>
                 <ObjectivesContainer
                   user={this.state.user}
-                  // onLoadObjectives={this.loadObjectives} 
-                  objectives={this.state.objectives}
+                />
+              }
+            />
+            <Route path="/users/objectives/:oid/goals" exact
+              render={(props) =>
+                <GoalContainer
+                  {...props}
+                  user={this.state.user}        
                 />
               }
             />

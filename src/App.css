@@ -3,7 +3,8 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 55vmin;
+  /* height: 60vh; */
   pointer-events: none;
 }
 
@@ -37,6 +38,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.objective-container {
+  background-color: #551A8B;
+  /* background-color: coral; */
+  height: 100vh;
+  width: 100vh;
+  border: white;
+  border-width: medium;
+}
+
+.objective-content {
+  text-align: left;
+}
+
+body {
+  background-color: #282c34;
 }
 
 /* .home {

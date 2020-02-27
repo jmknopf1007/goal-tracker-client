@@ -36,7 +36,7 @@ class Signup extends Component {
             <Header as='h1' inverted textAlign='center'>
               Please create your account 
             </Header>
-            <Form size='large' autoComplete="off">
+            <Form size='small' autoComplete="off">
               <Form.Input
                 fluid
                 icon='user circle'
@@ -83,7 +83,7 @@ class Signup extends Component {
                 Sign up 
               </Button>
             </Form>
-            <Header inverted textAlign='center'>
+            <Header as='h1' inverted textAlign='center'>
               If you already have an account, please <Link to='/login'>Log In</Link>
             </Header>
           </Grid.Column>

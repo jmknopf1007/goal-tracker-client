@@ -33,7 +33,7 @@ handleChange = e =>
             <Header as='h1' inverted textAlign='center'>
               Please login
             </Header>
-            <Form size='large'>
+            <Form size='small'>
               <Form.Input 
                 fluid 
                 icon='user circle' 
@@ -48,6 +48,7 @@ handleChange = e =>
                 icon='file text'
                 iconPosition='left'
                 placeholder='Password'
+                type="password"
                 name="password"
                 value={password}
                 onChange={this.handleChange}
@@ -62,8 +63,8 @@ handleChange = e =>
                 Login
               </Button>
             </Form>
-            <Header inverted textAlign='center'>
-              New to us? <Link to='/signup'>Sign Up</Link>
+            <Header as='h1' inverted textAlign='center'>
+                New to us? <Link to='/signup'>Sign Up</Link>
             </Header>
           </Grid.Column>
         </Grid>

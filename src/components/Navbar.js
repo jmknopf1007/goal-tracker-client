@@ -3,17 +3,23 @@ import { Menu } from 'semantic-ui-react'
 import {NavLink} from 'react-router-dom'
 
 
-const Navbar = ({user, onLogout}) => {
+const Navbar = ({user, onLogout, history}) => {
 
-    const handleClick = () =>
+    const handleClick = () => {
         onLogout()
+        history.push("/")
+    }
+
     
         return (
-            <Menu>
+            <Menu 
+            color='teal'
+            inverted
+            >
             <Menu.Item as={NavLink} exact to='/'>Home</Menu.Item>
             {user.id ? (
                 <>
-                    <Menu.Item as={NavLink} exact to={`/users/${user.id}/objectives`}>Objectives</Menu.Item>
+                    <Menu.Item as={NavLink} exact to={`/users/objectives`}>Objectives</Menu.Item>
                     <Menu.Item position="right">Welcome, {user.fullname}!</Menu.Item>
                     <Menu.Item onClick={handleClick}>Logout</Menu.Item>
                 </>

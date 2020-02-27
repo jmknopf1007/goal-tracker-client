@@ -31,23 +31,30 @@ const postUser = user =>
     body: JSON.stringify(user)
   }).then(r => r.json())
 
-const getObjectives = user => {
-  return fetch(`${API_ROOT}/users/${user.id}/objectives`)
-    .then(r => r.json())
-}
+// const getObjectives = user => {
+//   return fetch(`${API_ROOT}/users/${user.id}/objectives`)
+//     .then(r => r.json())
+// }
+
+// const getGoals = (user, objective) => {
+//   console.log(user, objective)
+//   return fetch(`${API_ROOT}/users/${user.id}/objectives/${objective.id}/goals`)
+//   .then(r => r.json())
+// }
 
 export const api = {
   auth: {
     login,
     getCurrentUser,
     postUser
-  },
-  data: {
-    getObjectives
   }
+  // data: {
+  //   // getObjectives,
+  //   // getGoals
+  // }
 }
 
-// Fetches
+// Initial Fetches
 
   // getUser = user =>
   //   fetch(`http://localhost:4000/users/${user.id}`)
