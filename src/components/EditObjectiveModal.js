@@ -3,7 +3,8 @@ import { Button, Form, Modal } from "semantic-ui-react";
 const INITIAL_STATE = {
   title: ""
 };
-export default class CreateObjectiveModal extends Component {
+export default class EditObjectiveModal extends Component {
+    // objective = this.props
   //testing modal click functionality
   state = { open: false };
   closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
@@ -28,10 +29,10 @@ export default class CreateObjectiveModal extends Component {
       <div>
         <Button
           onClick={this.closeConfigShow(false, true)}
-          color="green"
-          inverted
+          color="yellow"
+        //   inverted
         >
-          🆕 Objective
+          ✏️ Objective
         </Button>
         <Modal
           open={open}
@@ -39,9 +40,9 @@ export default class CreateObjectiveModal extends Component {
           closeOnDimmerClick={closeOnDimmerClick}
           onClose={this.close}
         >
-          <Modal.Header>Create an Objective</Modal.Header>
+          <Modal.Header>Edit this Objective</Modal.Header>
           <Modal.Content>
-            <h4>Please provide a title for your objective.</h4>
+            <h4>Please edit the title of your objective.</h4>
           </Modal.Content>
           <Form className="ui form" onSubmit={this.handleFormSubmit}>
             <div className="field">
@@ -73,4 +74,3 @@ export default class CreateObjectiveModal extends Component {
     );
   }
 }
-

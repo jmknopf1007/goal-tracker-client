@@ -2,6 +2,7 @@ import React from 'react'
 import Objective from '../components/Objective'
 import CreateObjectiveModal from '../components/CreateObjectiveModal'
 
+
 //import {Redirect} from 'react-router-dom'
 
 const ObjectivesContainer = ({ user, user: {objectives} }) => {

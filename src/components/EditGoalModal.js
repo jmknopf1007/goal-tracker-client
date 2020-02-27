@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   day_count: 0
 };
 
-export default class CreateObjectiveModal extends Component {
+export default class EditGoalModal extends Component {
   //testing modal click functionality
   state = { open: false };
   closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
@@ -32,10 +32,10 @@ export default class CreateObjectiveModal extends Component {
       <div>
         <Button
           onClick={this.closeConfigShow(false, true)}
-          color="green"
-          inverted
+          color="yellow"
+        //   inverted
         >
-          🆕 Goal
+          ✏️ Goal
         </Button>
         <Modal
           open={open}
@@ -43,9 +43,9 @@ export default class CreateObjectiveModal extends Component {
           closeOnDimmerClick={closeOnDimmerClick}
           onClose={this.close}
         >
-          <Modal.Header>Create a Goal</Modal.Header>
+          <Modal.Header>Edit this Goal</Modal.Header>
           <Modal.Content>
-            <h4>Please provide some information for your goal.</h4>
+            <h4>Please edit the information for your goal.</h4>
           </Modal.Content>
           <Form className="ui form" onSubmit={this.handleFormSubmit}>
             <div className="field">

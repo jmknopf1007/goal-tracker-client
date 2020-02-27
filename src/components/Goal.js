@@ -1,5 +1,7 @@
 import React from 'react'
 import {Button} from 'semantic-ui-react'
+import EditGoalModal from '../components/EditGoalModal'
+
 
 const Goal = ({ goal }) => {
  
@@ -13,8 +15,9 @@ const Goal = ({ goal }) => {
                 </li>
             </ul>
                 <div>
-                    <Button>✎</Button>
-                    <Button>✓</Button>
+                    {/* <Button>✎</Button> */}
+                    <EditGoalModal />
+                    <Button>☑️ Complete</Button>
                 </div>
         </div>
     )

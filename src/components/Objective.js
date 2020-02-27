@@ -1,6 +1,8 @@
 import React from 'react'
 import {Button} from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
+import EditObjectiveModal from '../components/EditObjectiveModal'
+
 
 const Objective = ({ objective }) => {
  
@@ -13,10 +15,17 @@ const Objective = ({ objective }) => {
                 </li>
             </ul>
             <Link to={`/users/objectives/${objective.id}/goals`}>
-                <Button>Goals</Button>
+                <Button
+                color="blue" 
+                >
+                    ⚙️ Goals
+                </Button>
             </Link>
-            <Button>✎</Button>
-            <Button>✓</Button>
+            {/* <Button>✎</Button> */}
+            <EditObjectiveModal
+            objective={objective} 
+            />
+            <Button>☑️ Complete</Button>
         </div>
     )
 }

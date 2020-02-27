@@ -1,6 +1,6 @@
 import React from 'react'
 import Goal from '../components/Goal'
-import {Button} from 'semantic-ui-react'
+// import {Button} from 'semantic-ui-react'
 import CreateGoalModal from '../components/CreateGoalModal'
 
 
