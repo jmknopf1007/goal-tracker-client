@@ -11,21 +11,22 @@ const Objective = ({ objective }) => {
             <ul>
                 <li>
                     {objective.title}--
-                    {/* {objective.created_at} */}
+                    {/* {objective.complete_status?<p>TRUE</p>:<p>False</p>} */}
+                    {/* {objective.id} */}
                 </li>
             </ul>
             <Link to={`/users/objectives/${objective.id}/goals`}>
                 <Button
                 color="blue" 
                 >
-                    ⚙️ Goals
+                    Goal List
                 </Button>
             </Link>
             {/* <Button>✎</Button> */}
             <EditObjectiveModal
             objective={objective} 
             />
-            <Button>☑️ Complete</Button>
+            <Button>Submit</Button>
         </div>
     )
 }

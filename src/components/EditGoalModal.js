@@ -35,7 +35,7 @@ export default class EditGoalModal extends Component {
           color="yellow"
         //   inverted
         >
-          ✏️ Goal
+          Edit Goal
         </Button>
         <Modal
           open={open}

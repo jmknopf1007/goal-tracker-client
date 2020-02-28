@@ -11,13 +11,14 @@ const Goal = ({ goal }) => {
                 <li>
                     {goal.description}--
                     {goal.category}
+                    {goal.complete_status}
                     {/* Day Counter--{goal.day_count} */}
                 </li>
             </ul>
                 <div>
                     {/* <Button>✎</Button> */}
                     <EditGoalModal />
-                    <Button>☑️ Complete</Button>
+                    <Button>Submit</Button>
                 </div>
         </div>
     )

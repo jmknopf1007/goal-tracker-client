@@ -6,7 +6,7 @@ import CreateGoalModal from '../components/CreateGoalModal'
 
 //import {Redirect} from 'react-router-dom'
 
-const GoalContainer = ({user, user: {objective}, match: {params}}) => {
+const GoalsContainer = ({user, match: {params}}) => {
 
     // console.log(props)
 
@@ -42,4 +42,4 @@ const GoalContainer = ({user, user: {objective}, match: {params}}) => {
 
 }
 
-export default GoalContainer
+export default GoalsContainer

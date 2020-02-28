@@ -31,7 +31,7 @@ export default class CreateObjectiveModal extends Component {
           color="green"
           inverted
         >
-          🆕 Objective
+          Add Objective
         </Button>
         <Modal
           open={open}

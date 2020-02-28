@@ -32,7 +32,7 @@ export default class EditObjectiveModal extends Component {
           color="yellow"
         //   inverted
         >
-          ✏️ Objective
+          Edit Objective
         </Button>
         <Modal
           open={open}

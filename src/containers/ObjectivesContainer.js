@@ -12,14 +12,15 @@ const ObjectivesContainer = ({ user, user: {objectives} }) => {
     const showObjectives = () => {
         // console.log(objectives)
         return objectives.map((objective, index) => {
-
-            return <Objective
-            objective={objective}
-            key={index}
-            user={user}
-            />
-        }
-        )
+            if (objective.complete_status === false) {
+                console.log(objective)
+                return <Objective
+                objective={objective}
+                key={index}
+                user={user}
+                />
+            }
+        })
     }
 
     return (

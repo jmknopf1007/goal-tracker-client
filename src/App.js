@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ObjectivesContainer from './containers/ObjectivesContainer'
-import GoalContainer from './containers/GoalContainer'
+import GoalsContainer from './containers/GoalsContainer'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Login from './components/Login'
@@ -106,7 +106,7 @@ class App extends Component {
             />
             <Route path="/users/objectives/:oid/goals" exact
               render={(props) =>
-                <GoalContainer
+                <GoalsContainer
                   {...props}
                   user={this.state.user}        
                 />
