@@ -4,7 +4,11 @@ import {Link} from 'react-router-dom'
 import EditObjectiveModal from '../components/EditObjectiveModal'
 
 
-const Objective = ({ objective }) => {
+const Objective = ({ objective, onSubmitObjective }) => {
+
+    const handleSubmit = () => {
+        onSubmitObjective(objective)
+    }
  
     return (
         <div className="objective-content">  
@@ -12,7 +16,6 @@ const Objective = ({ objective }) => {
                 <li>
                     {objective.title}--
                     {/* {objective.complete_status?<p>TRUE</p>:<p>False</p>} */}
-                    {/* {objective.id} */}
                 </li>
             </ul>
             <Link to={`/users/objectives/${objective.id}/goals`}>
@@ -26,7 +29,8 @@ const Objective = ({ objective }) => {
             <EditObjectiveModal
             objective={objective} 
             />
-            <Button>Submit</Button>
+            <Button onClick={handleSubmit}>Submit</Button>
+            {/* onClick={} */}
         </div>
     )
 }

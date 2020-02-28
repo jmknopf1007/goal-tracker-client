@@ -5,20 +5,23 @@ import CreateObjectiveModal from '../components/CreateObjectiveModal'
 
 //import {Redirect} from 'react-router-dom'
 
-const ObjectivesContainer = ({ user, user: {objectives} }) => {
+const ObjectivesContainer = ({ user, user: {objectives}, onSubmitObjective }) => {
 
-    // console.log(user)
+    //console.log(user)
 
     const showObjectives = () => {
         // console.log(objectives)
         return objectives.map((objective, index) => {
             if (objective.complete_status === false) {
-                console.log(objective)
+                //console.log(objective)
                 return <Objective
                 objective={objective}
                 key={index}
                 user={user}
+                onSubmitObjective={onSubmitObjective}
                 />
+            } else {
+                return null
             }
         })
     }

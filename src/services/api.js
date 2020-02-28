@@ -32,7 +32,7 @@ const postUser = user =>
   }).then(r => r.json())
 
 const postObjective = (objective) => {
-  fetch(`${API_ROOT}/users/objectives`, {
+  return fetch(`${API_ROOT}/objectives`, {
     method: "POST",
     headers: { "Content-Type": "application/json", "Accept": "application/json" },
     body: JSON.stringify(objective)
@@ -40,10 +40,20 @@ const postObjective = (objective) => {
 }
 
 const postGoal = (objective, goal) => {
-  fetch(`${API_ROOT}/users/objectives/${objective.id}`, {
+  return fetch(`${API_ROOT}/objectives/${objective.id}/goals`, {
     method: "POST",
     headers: { "Content-Type": "application/json", "Accept": "application/json" },
     body: JSON.stringify(goal)
+  }).then(r => r.json())
+}
+
+const patchObjective = (objective) => {
+  return fetch(`${API_ROOT}/objectives/${objective.id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify({
+      objective: objective
+    })
   }).then(r => r.json())
 }
 
@@ -66,7 +76,8 @@ export const api = {
   },
   data: {
     postObjective,
-    postGoal
+    postGoal,
+    patchObjective
     // getObjectives,
     // getGoals
   }

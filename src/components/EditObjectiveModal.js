@@ -1,8 +1,19 @@
 import React, {Component} from "react";
-import { Button, Form, Modal } from "semantic-ui-react";
+import { Button, Form, Modal, Dropdown } from "semantic-ui-react";
+
 const INITIAL_STATE = {
-  title: ""
+  title: "",
+  complete_status: ""
 };
+
+const completeStatusOptions = [
+    {
+      key: 'false',
+      text: 'false',
+      value: false,
+    }
+  ]
+
 export default class EditObjectiveModal extends Component {
     // objective = this.props
   //testing modal click functionality
@@ -22,6 +33,7 @@ export default class EditObjectiveModal extends Component {
     this.props.postObjective(this.state);
     this.setState(INITIAL_STATE);
   };
+
   render() {
     //testing modal:
     const { open, closeOnEscape, closeOnDimmerClick } = this.state;
@@ -54,8 +66,14 @@ export default class EditObjectiveModal extends Component {
                 onChange={this.handleChange}
                 placeholder="Title"
               />
+                <Dropdown 
+                    placeholder='Complete Status'
+                    fluid
+                    selection
+                    value={this.state.complete_status}
+                    options={completeStatusOptions}
+                    />
             </div>
-            {/* <button type="submit" className="ui button">Submit</button> */}
           </Form>
           <Modal.Actions>
             <Button onClick={this.close} negative>

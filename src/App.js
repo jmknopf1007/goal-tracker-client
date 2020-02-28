@@ -48,6 +48,12 @@ class App extends Component {
     localStorage.removeItem('token')
   }
 
+  submitObjective = (objective) => {
+    console.log(objective)
+    api.data.patchObjective({...objective, complete_status: true})
+    .then(this.currentUser)
+    }
+
   // Building State Function(s) ###########################
 
   // loadObjectives = () => {
@@ -101,6 +107,7 @@ class App extends Component {
               render={() =>
                 <ObjectivesContainer
                   user={this.state.user}
+                  onSubmitObjective={this.submitObjective}
                 />
               }
             />

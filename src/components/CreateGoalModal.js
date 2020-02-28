@@ -1,10 +1,52 @@
 import React, {Component} from "react";
-import { Button, Form, Modal } from "semantic-ui-react";
+import { Button, Form, Modal, Dropdown } from "semantic-ui-react";
+
 const INITIAL_STATE = {
   description: "",
   category: "",
-  day_count: 0
+  complete_status: "",
+  day_count: ""
 };
+
+const categoryOptions = [
+  {
+    key: 'Daily',
+    text: 'Daily',
+    value: 'Daily',
+  },
+  {
+    key: 'Weekly',
+    text: 'Weekly',
+    value: 'Weekly',
+  },
+  {
+      key: 'Monthly',
+      text: 'Monthly',
+      value: 'Monthly',
+    },
+    {
+      key: 'Yearly',
+      text: 'Yearly',
+      value: 'Yearly',
+    },
+     
+]
+
+const completeStatusOptions = [
+  {
+    key: 'false',
+    text: 'false',
+    value: 'false',
+  }
+]
+
+const dayCountOptions = [
+  {
+    key: '0',
+    text: '0',
+    value: '0',
+  }
+]
 
 export default class CreateObjectiveModal extends Component {
   //testing modal click functionality
@@ -57,35 +99,28 @@ export default class CreateObjectiveModal extends Component {
                     onChange={this.handleChange}
                     placeholder="Description"
                 />
-              {/* <input
-                type="text"
-                name="category"
-                value={this.state.category}
-                onChange={this.handleChange}
-                placeholder="Category- daily, monthly, weekly, yearly"
-              /> */}
-                {/* <label>Category</label> */}
-                    <select>
-                        <option value="" defaultValue>Select a Category</option>
-                        <option value="daily">Daily</option>
-                        <option value="weekly">Weekly</option>
-                        <option value="monthly">Monthly</option>
-                        <option value="yearly">Yearly</option>
-                    </select> 
-                {/* <input
-                    type="text"
-                    name="day_count"
+                    <Dropdown 
+                    placeholder='Category'
+                    fluid
+                    selection
+                    value={this.state.category}
+                    options={categoryOptions}
+                    />
+                     <Dropdown 
+                    placeholder='Complete Status'
+                    fluid
+                    selection
+                    value={this.state.complete_status}
+                    options={completeStatusOptions}
+                    />
+                    <Dropdown 
+                    placeholder='Day Counter'
+                    fluid
+                    selection
                     value={this.state.day_count}
-                    onChange={this.handleChange}
-                    placeholder="Day_count- MUST begin with a value of 0"
-                /> */}
-                {/* <label>Day_Count</label> */}
-                    <select>
-                        <option value="" defaultValue>Day Counter</option>
-                        <option value="0">0</option>
-                    </select> 
+                    options={dayCountOptions}
+                    />
             </div>
-            {/* <button type="submit" className="ui button">Submit</button> */}
           </Form>
           <Modal.Actions>
             <Button onClick={this.close} negative>
