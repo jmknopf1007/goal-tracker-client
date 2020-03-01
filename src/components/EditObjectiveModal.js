@@ -3,16 +3,16 @@ import { Button, Form, Modal, Dropdown } from "semantic-ui-react";
 
 const INITIAL_STATE = {
   title: "",
-  complete_status: ""
+  complete_status: false
 };
 
-const completeStatusOptions = [
-    {
-      key: 'false',
-      text: 'false',
-      value: false,
-    }
-  ]
+// const completeStatusOptions = [
+//     {
+//       key: 'false',
+//       text: 'false',
+//       value: false,
+//     }
+//   ]
 
 export default class EditObjectiveModal extends Component {
     // objective = this.props
@@ -66,13 +66,13 @@ export default class EditObjectiveModal extends Component {
                 onChange={this.handleChange}
                 placeholder="Title"
               />
-                <Dropdown 
+                {/* <Dropdown 
                     placeholder='Complete Status'
                     fluid
                     selection
                     value={this.state.complete_status}
                     options={completeStatusOptions}
-                    />
+                    /> */}
             </div>
           </Form>
           <Modal.Actions>

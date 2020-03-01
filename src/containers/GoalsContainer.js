@@ -1,6 +1,6 @@
 import React from 'react'
 import Goal from '../components/Goal'
-// import {Button} from 'semantic-ui-react'
+import {Button, Card} from 'semantic-ui-react'
 import CreateGoalModal from '../components/CreateGoalModal'
 
 
@@ -28,16 +28,20 @@ const GoalsContainer = ({user, match: {params}}) => {
 
     return (
         <div className="goal-container">
-           
-            {/* <h2>{`Current Goals: ${objective.title}`}</h2> */}
-            <h2>Current Goals:</h2>
+            <Card style={{ width: 450 }}>
+                 <Card.Content>
+                    <Card.Header>Current Goals:</Card.Header>
+        
 
-           
-            {/* <Button>✛  Goal</Button> */}
-            <CreateGoalModal />
-            
-            {user.id ? showGoals() : null}
-        </div>
+                        <CreateGoalModal />    
+
+                        {user.id ? showGoals() : null}
+       
+                    </Card.Content>
+            </Card>
+
+         </div>
+
     )
 
 }

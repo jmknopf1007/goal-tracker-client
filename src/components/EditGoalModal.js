@@ -4,8 +4,8 @@ import { Button, Form, Modal, Dropdown } from "semantic-ui-react";
 const INITIAL_STATE = {
   description: "",
   category: "",
-  complete_status: "",
-  day_count: ""
+  complete_status: false,
+  day_count: 0
 };
 
 const categoryOptions = [
@@ -32,21 +32,21 @@ const categoryOptions = [
        
   ]
   
-  const completeStatusOptions = [
-    {
-      key: 'false',
-      text: 'false',
-      value: 'false',
-    }
-  ]
+//   const completeStatusOptions = [
+//     {
+//       key: 'false',
+//       text: 'false',
+//       value: 'false',
+//     }
+//   ]
   
-  const dayCountOptions = [
-    {
-      key: '0',
-      text: '0',
-      value: '0',
-    }
-  ]
+//   const dayCountOptions = [
+//     {
+//       key: '0',
+//       text: '0',
+//       value: '0',
+//     }
+//   ]
 
 export default class EditGoalModal extends Component {
   //testing modal click functionality
@@ -106,7 +106,7 @@ export default class EditGoalModal extends Component {
                     value={this.state.category}
                     options={categoryOptions}
                     />
-                     <Dropdown 
+                     {/* <Dropdown 
                     placeholder='Complete Status'
                     fluid
                     selection
@@ -119,7 +119,7 @@ export default class EditGoalModal extends Component {
                     selection
                     value={this.state.day_count}
                     options={dayCountOptions}
-                    />
+                    /> */}
             </div>
           </Form>
           <Modal.Actions>

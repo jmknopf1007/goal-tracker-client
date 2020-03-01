@@ -54,6 +54,12 @@ class App extends Component {
     .then(this.currentUser)
     }
 
+  createObjective = (objective) => {
+    console.log(objective)
+    // console.log("fbdjgihngsmfrdnhiodnhghg")
+    api.data.postObjective({ objective })
+  }  
+
   // Building State Function(s) ###########################
 
   // loadObjectives = () => {
@@ -104,10 +110,12 @@ class App extends Component {
               }
             />
             <Route path="/users/objectives" exact
-              render={() =>
+              render={(props) =>
                 <ObjectivesContainer
+                  {...props}
                   user={this.state.user}
                   onSubmitObjective={this.submitObjective}
+                  createObjective={this.createObjective}
                 />
               }
             />

@@ -50,6 +50,8 @@
 
 .objective-content {
   text-align: left;
+  /* margin: 0 auto; */
+  /* align-items: center; */
 }
 
 .goal-container {
@@ -67,6 +69,10 @@
 body {
   background-color: #282c34;
 }
+
+/* .objective-card {
+  width: 100%
+} */
 
 /* .home {
   background-image: url("/sky-photo-314703.jpeg");

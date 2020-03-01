@@ -1,18 +1,19 @@
 import React, {Component} from "react";
-import { Button, Form, Modal, Dropdown } from "semantic-ui-react";
+import { Button, Form, Modal } from "semantic-ui-react";
 
 const INITIAL_STATE = {
   title: "",
-  complete_status: ""
+  complete_status: false
 };
 
-const completeStatusOptions = [
-    {
-      key: 'false',
-      text: 'false',
-      value: false,
-    }
-  ]
+// const completeStatusOptions = [
+//     {
+//       key: 'false',
+//       text: 'false',
+//       value: 'false',
+        
+//     }
+//   ]
 
 export default class CreateObjectiveModal extends Component {
   //testing modal click functionality
@@ -23,20 +24,38 @@ export default class CreateObjectiveModal extends Component {
   close = () => this.setState({ open: false });
   //-------------------------------------------
   state = INITIAL_STATE;
+
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
+//   handleSelectChange=(e,{value})=>this.setState({stateValue:value})
+
+//   handleDropdownChange = (e, data) => {
+//       this.setState({
+//           [data.name]: data.value 
+//       })
+//   }
+
+    // handleSelectChange = (e, result) => {
+    //     const { name, value } = result;
+    //     this.setState({
+    //     [name]: value
+    //     });
+    // };
+
   handleFormSubmit = e => {
     // debugger;
     e.preventDefault();
-    this.props.postObjective(this.state);
+    this.props.createObjective(this.state);
     this.setState(INITIAL_STATE);
   };
   render() {
     //testing modal:
     const { open, closeOnEscape, closeOnDimmerClick } = this.state;
     return (
-      <div>
+        <div>
+        {/* {console.log(this.props)} */}
         <Button
           onClick={this.closeConfigShow(false, true)}
           color="green"
@@ -64,13 +83,14 @@ export default class CreateObjectiveModal extends Component {
                 onChange={this.handleChange}
                 placeholder="Title"
               />
-                <Dropdown 
+                {/* <Dropdown 
                     placeholder='Complete Status'
                     fluid
                     selection
-                    // value={this.state.complete_status}
+                    value={this.state.complete_status} 
+                    onChange={this.handleSelectChange}
                     options={completeStatusOptions}
-                    />
+                    /> */}
             </div>
           </Form>
           <Modal.Actions>

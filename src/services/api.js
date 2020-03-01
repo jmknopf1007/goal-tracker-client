@@ -35,7 +35,9 @@ const postObjective = (objective) => {
   return fetch(`${API_ROOT}/objectives`, {
     method: "POST",
     headers: { "Content-Type": "application/json", "Accept": "application/json" },
-    body: JSON.stringify(objective)
+    body: JSON.stringify({
+      objective: objective
+    })
   }).then(r => r.json())
 }
 

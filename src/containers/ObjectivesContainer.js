@@ -1,24 +1,23 @@
 import React from 'react'
+import {Button, Card} from 'semantic-ui-react'
 import Objective from '../components/Objective'
 import CreateObjectiveModal from '../components/CreateObjectiveModal'
 
-
-//import {Redirect} from 'react-router-dom'
-
-const ObjectivesContainer = ({ user, user: {objectives}, onSubmitObjective }) => {
+const ObjectivesContainer = (props) => {
 
     //console.log(user)
 
     const showObjectives = () => {
         // console.log(objectives)
-        return objectives.map((objective, index) => {
+        return props.user.objectives.map((objective, index) => {
+            // console.log(objective)
             if (objective.complete_status === false) {
                 //console.log(objective)
                 return <Objective
                 objective={objective}
                 key={index}
-                user={user}
-                onSubmitObjective={onSubmitObjective}
+                user={props.user}
+                onSubmitObjective={props.onSubmitObjective}
                 />
             } else {
                 return null
@@ -27,18 +26,19 @@ const ObjectivesContainer = ({ user, user: {objectives}, onSubmitObjective }) =>
     }
 
     return (
-        <div className="objective-container">
-           
-            <h2>Current Objectives:</h2>
-           
-            {/* <Button>✛  Objective</Button> */}
-            {/* <Modal trigger={<Button>✛ Objective</Button>}></Modal> */}
-            <CreateObjectiveModal />
+        // <div class="ui container center aligned">
+      <div className="objective-container">
+        <Card  class="objective-card"style={{ width: 450 }}>
+            <Card.Content>
+                <Card.Header>Current Objectives:</Card.Header>
 
-            {user.id ? showObjectives() : null}
-        </div>
+                 <CreateObjectiveModal createObjective={props.createObjective}/>
+
+            {props.user.id ? showObjectives() : null}
+        </Card.Content>
+    </Card>
+    </div>
     )
-
 }
 
 export default ObjectivesContainer

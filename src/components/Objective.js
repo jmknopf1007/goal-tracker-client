@@ -1,38 +1,43 @@
 import React from 'react'
-import {Button} from 'semantic-ui-react'
+import {Button, Card} from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
 import EditObjectiveModal from '../components/EditObjectiveModal'
 
 
-const Objective = ({ objective, onSubmitObjective }) => {
+const Objective = (props) => {
 
     const handleSubmit = () => {
-        onSubmitObjective(objective)
+        props.onSubmitObjective(props.objective)
     }
  
-    return (
+    return ( 
         <div className="objective-content">  
-            <ul>
-                <li>
-                    {objective.title}--
-                    {/* {objective.complete_status?<p>TRUE</p>:<p>False</p>} */}
-                </li>
-            </ul>
-            <Link to={`/users/objectives/${objective.id}/goals`}>
-                <Button
-                color="blue" 
-                >
-                    Goal List
-                </Button>
-            </Link>
-            {/* <Button>✎</Button> */}
-            <EditObjectiveModal
-            objective={objective} 
-            />
-            <Button onClick={handleSubmit}>Submit</Button>
-            {/* onClick={} */}
+            <Card style={{ width: '400px' }}>
+              <Card.Content>
+                <Card.Header>{props.objective.title}</Card.Header>
+                <Card.Meta>~</Card.Meta>
+                {/* <Card.Description>
+                  Steve wants to add you to the group <strong>best friends</strong>
+                </Card.Description> */}
+              </Card.Content>
+              <Card.Content extra>
+                <div className='ui buttons'>
+                <Link to={`/users/objectives/${props.objective.id}/goals`}>
+                        <Button color="blue">
+                            Goal List
+                        </Button>
+                    </Link>
+                    <EditObjectiveModal
+                    objective={props.objective} 
+                    />
+                  <Button onClick={handleSubmit}>Submit</Button>
+                </div>
+              </Card.Content>
+            </Card>
         </div>
     )
 }
 
 export default Objective
+
+
