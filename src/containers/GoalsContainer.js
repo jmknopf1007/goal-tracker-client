@@ -6,12 +6,14 @@ import CreateGoalModal from '../components/CreateGoalModal'
 
 const GoalsContainer = (props) => {
 
+    const findObjective = () => {
+        return props.user.id ? props.user.objectives.find(obj => obj.id === parseInt(props.match.params.oid)) : {}
+    }
+
     // console.log(props)
 
     const showGoals = () => {
-        let objective = props.user.objectives.find(obj => obj.id === parseInt(props.match.params.oid))
-        // console.log(objective)
-        let goals = objective.goals
+        let goals = props.user.id ? findObjective().goals : []
         return goals.map((goal, index) => {
             if (goal.complete_status === false) {
 
@@ -19,13 +21,16 @@ const GoalsContainer = (props) => {
                 goal={goal}
                 key={index}
                 user={props.user}
-                // objective={props.objective}
                 onSubmitGoal={props.onSubmitGoal}
                 />
 
             }
         })
     }
+
+    const potato = goal =>
+        props.createGoal(goal, findObjective())
+        
 
     return (
         <div className="goal-container">
@@ -34,7 +39,7 @@ const GoalsContainer = (props) => {
                     <Card.Header>Current Goals:</Card.Header>
         
 
-                        <CreateGoalModal />    
+                        <CreateGoalModal createGoal={potato} user={props.user}/>    
 
                         {props.user.id ? showGoals() : null}
        

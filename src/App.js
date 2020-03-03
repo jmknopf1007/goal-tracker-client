@@ -47,6 +47,8 @@ class App extends Component {
     this.setState(INITIAL_STATE)
     localStorage.removeItem('token')
   }
+  
+  // Updating State Function(s) ###########################
 
   submitObjective = (objective) => {
     console.log(objective)
@@ -57,7 +59,7 @@ class App extends Component {
   createObjective = (objective) => {
     console.log(objective)
     // console.log("fbdjgihngsmfrdnhiodnhghg")
-    api.data.postObjective(objective)
+    api.data.postObjective({...objective})
     .then(this.currentUser)
   } 
   
@@ -66,32 +68,12 @@ class App extends Component {
     .then(this.currentUser) 
   }
 
-  // Building State Function(s) ###########################
+  createGoal = (goal, objective) => {
+    api.data.postGoal({...goal, objective_id: objective.id})
+    .then(this.currentUser)
+  }
 
-  // loadObjectives = () => {
-  //   api.data.getObjectives(this.state.user)
-  //     .then(data => {
-  //       //console.log(data)
-  //       if (!data.error) {
-  //         this.setState({ objectives: data.objectives })
-  //       }
-  //     })
-  // }
 
-  // loadGoals = () => {
-  //   api.data.getGoals(this.state.user, this.state.objectives)
-  //   .then(data => {
-  //     console.log(data)
-  //     if (!data.error) {
-  //       this.setState({ goals: data.goals })
-  //     }
-  //   })
-  // }
-
-  // loadData = () => {
-  //   this.loadObjectives()
-  //   this.loadGoals()
-  // }
 
   render() {
     return (
@@ -130,7 +112,8 @@ class App extends Component {
                 <GoalsContainer
                   {...props}
                   user={this.state.user}  
-                  onSubmitGoal={this.submitGoal}      
+                  onSubmitGoal={this.submitGoal}
+                  createGoal={this.createGoal}      
                 />
               }
             />

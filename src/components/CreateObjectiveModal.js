@@ -4,7 +4,6 @@ import { Button, Form, Modal } from "semantic-ui-react";
 const INITIAL_STATE = {
   title: "",
   open: false
-//   complete_status: false
 };
 
 // const completeStatusOptions = [
@@ -29,21 +28,6 @@ export default class CreateObjectiveModal extends Component {
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
-
-//   handleSelectChange=(e,{value})=>this.setState({stateValue:value})
-
-//   handleDropdownChange = (e, data) => {
-//       this.setState({
-//           [data.name]: data.value 
-//       })
-//   }
-
-    // handleSelectChange = (e, result) => {
-    //     const { name, value } = result;
-    //     this.setState({
-    //     [name]: value
-    //     });
-    // };
 
   handleFormSubmit = e => {
     // debugger;
