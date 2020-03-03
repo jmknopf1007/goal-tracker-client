@@ -26,6 +26,8 @@ const Objective = (props) => {
                     </Link>
                     <EditObjectiveModal
                     objective={props.objective} 
+                    user={props.user}
+                    editObjective={props.editObjective}
                     />
                   <Button onClick={handleSubmit}>Submit</Button>
                 </div>

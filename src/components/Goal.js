@@ -19,7 +19,11 @@ const Goal = (props) => {
                             <Card.Content extra>
                                 <div className='ui buttons'>
 
-                                    <EditGoalModal />
+                                    <EditGoalModal 
+                                     goal={props.goal}
+                                     user={props.user}
+                                     editGoal={props.editGoal}
+                                    />
                                     <Button onClick={handleSubmit}>Submit</Button>
                                 </div>
                 </Card.Content>

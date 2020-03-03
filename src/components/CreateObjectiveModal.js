@@ -6,15 +6,6 @@ const INITIAL_STATE = {
   open: false
 };
 
-// const completeStatusOptions = [
-//     {
-//       key: 'false',
-//       text: 'false',
-//       value: 'false',
-        
-//     }
-//   ]
-
 export default class CreateObjectiveModal extends Component {
   //testing modal click functionality
   state = { open: false };
@@ -73,14 +64,6 @@ export default class CreateObjectiveModal extends Component {
                 onChange={this.handleChange}
                 placeholder="Title"
               />
-                {/* <Dropdown 
-                    placeholder='Complete Status'
-                    fluid
-                    selection
-                    value={this.state.complete_status} 
-                    onChange={this.handleSelectChange}
-                    options={completeStatusOptions}
-                    /> */}
             </div>
           </Form>
           <Modal.Actions>

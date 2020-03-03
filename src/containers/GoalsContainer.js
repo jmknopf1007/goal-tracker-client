@@ -22,6 +22,7 @@ const GoalsContainer = (props) => {
                 key={index}
                 user={props.user}
                 onSubmitGoal={props.onSubmitGoal}
+                editGoal={props.editGoal}
                 />
 
             }

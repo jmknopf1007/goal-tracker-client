@@ -1,75 +1,68 @@
 import React, {Component} from "react";
 import { Button, Form, Modal, Dropdown } from "semantic-ui-react";
 
-const INITIAL_STATE = {
-  description: "",
-  category: "",
-  complete_status: false,
-  day_count: 0
-};
-
-const categoryOptions = [
+  const categoryOptions = [
     {
-      key: 'Daily',
-      text: 'Daily',
-      value: 'Daily',
+      key: 'daily',
+      text: 'daily',
+      value: 'daily',
     },
     {
-      key: 'Weekly',
-      text: 'Weekly',
-      value: 'Weekly',
+      key: 'weekly',
+      text: 'weekly',
+      value: 'weekly',
     },
     {
-        key: 'Monthly',
-        text: 'Monthly',
-        value: 'Monthly',
+        key: 'monthly',
+        text: 'monthly',
+        value: 'monthly',
       },
       {
-        key: 'Yearly',
-        text: 'Yearly',
-        value: 'Yearly',
+        key: 'yearly',
+        text: 'yearly',
+        value: 'yearly',
       },
        
   ]
   
-//   const completeStatusOptions = [
-//     {
-//       key: 'false',
-//       text: 'false',
-//       value: 'false',
-//     }
-//   ]
-  
-//   const dayCountOptions = [
-//     {
-//       key: '0',
-//       text: '0',
-//       value: '0',
-//     }
-//   ]
-
 export default class EditGoalModal extends Component {
   //testing modal click functionality
-  state = { open: false };
+  state = { 
+      description: this.props.goal.description,
+      data: {category: this.props.goal.category},
+      open: false };
+
   closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
-    this.setState({ closeOnEscape, closeOnDimmerClick, open: true });
+    this.setState({ closeOnEscape, closeOnDimmerClick, open: true, description: this.props.goal.description, category: this.props.goal.category });
   };
-  close = () => this.setState({ open: false });
-  //-------------------------------------------
-  state = INITIAL_STATE;
+  close = () => this.setState({ open: false,  });
+
+  handleCatChange = (e, { value }) => {
+    console.log(value);
+    this.setState({ data: {category: value} }, () => console.log(this.state))
+  }
+
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
   handleFormSubmit = e => {
     // debugger;
     e.preventDefault();
-    this.props.postGoal(this.state);
-    this.setState(INITIAL_STATE);
+    this.props.editGoal({
+      description: this.state.description,
+      data: this.state.data,
+      complete_status: false,
+      day_count: 0,
+      id: this.props.goal.id
+    });
+    this.setState({
+        open: false
+    });
   };
 
   render() {
     //testing modal:
-    const { open, closeOnEscape, closeOnDimmerClick } = this.state;
+    const { open, closeOnEscape, closeOnDimmerClick, value } = this.state;
     return (
       <div>
         <Button
@@ -103,23 +96,10 @@ export default class EditGoalModal extends Component {
                     placeholder='Category'
                     fluid
                     selection
-                    value={this.state.category}
+                    value={this.state.data.category}
+                    onChange={this.handleCatChange}
                     options={categoryOptions}
                     />
-                     {/* <Dropdown 
-                    placeholder='Complete Status'
-                    fluid
-                    selection
-                    value={this.state.complete_status}
-                    options={completeStatusOptions}
-                    />
-                    <Dropdown 
-                    placeholder='Day Counter'
-                    fluid
-                    selection
-                    value={this.state.day_count}
-                    options={dayCountOptions}
-                    /> */}
             </div>
           </Form>
           <Modal.Actions>

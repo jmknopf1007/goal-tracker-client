@@ -51,17 +51,21 @@ class App extends Component {
   // Updating State Function(s) ###########################
 
   submitObjective = (objective) => {
-    console.log(objective)
+    // console.log(objective)
     api.data.patchObjective({...objective, complete_status: true})
     .then(this.currentUser)
     }
 
   createObjective = (objective) => {
-    console.log(objective)
-    // console.log("fbdjgihngsmfrdnhiodnhghg")
+    // console.log(objective)
     api.data.postObjective({...objective})
     .then(this.currentUser)
   } 
+
+  editObjective = (objective) => {
+    api.data.patchObjective(objective)
+    .then(this.currentUser)
+  }
   
   submitGoal = (goal) => {
     api.data.patchGoal({...goal, complete_status: true})
@@ -73,7 +77,10 @@ class App extends Component {
     .then(this.currentUser)
   }
 
-
+  editGoal = (goal) => {
+    api.data.patchThisGoal(goal)//.then(console.log)
+    .then(this.currentUser)
+  }
 
   render() {
     return (
@@ -104,6 +111,7 @@ class App extends Component {
                   user={this.state.user}
                   onSubmitObjective={this.submitObjective}
                   createObjective={this.createObjective}
+                  editObjective={this.editObjective}
                 />
               }
             />
@@ -113,7 +121,8 @@ class App extends Component {
                   {...props}
                   user={this.state.user}  
                   onSubmitGoal={this.submitGoal}
-                  createGoal={this.createGoal}      
+                  createGoal={this.createGoal}  
+                  editGoal={this.editGoal}    
                 />
               }
             />

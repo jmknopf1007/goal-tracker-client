@@ -18,6 +18,7 @@ const ObjectivesContainer = (props) => {
                 key={index}
                 user={props.user}
                 onSubmitObjective={props.onSubmitObjective}
+                editObjective={props.editObjective}
                 />
             } else {
                 return null

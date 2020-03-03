@@ -1,37 +1,31 @@
 import React, {Component} from "react";
 import { Button, Form, Modal } from "semantic-ui-react";
 
-const INITIAL_STATE = {
-  title: '',
-  complete_status: false
-};
-
-// const completeStatusOptions = [
-//     {
-//       key: 'false',
-//       text: 'false',
-//       value: false,
-//     }
-//   ]
-
 export default class EditObjectiveModal extends Component {
-    // objective = this.props
-  //testing modal click functionality
-  state = { open: false };
+  state = { 
+      title: this.props.objective.title,
+      open: false
+     };
+
   closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
     this.setState({ closeOnEscape, closeOnDimmerClick, open: true });
   };
-  close = () => this.setState({ open: false });
-  //-------------------------------------------
-  state = INITIAL_STATE;
+  close = () => this.setState({ open: false, title: this.props.objective.title});
+
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
   handleFormSubmit = e => {
     // debugger;
     e.preventDefault();
-    this.props.postObjective(this.state);
-    this.setState(INITIAL_STATE);
+    this.props.editObjective({
+        title: this.state.title,
+        complete_status: false,
+        user_id: this.props.user.id,
+        id: this.props.objective.id
+    });
+    this.setState({open: false})
   };
 
   render() {
@@ -66,13 +60,6 @@ export default class EditObjectiveModal extends Component {
                 onChange={this.handleChange}
                 placeholder="Title"
               />
-                {/* <Dropdown 
-                    placeholder='Complete Status'
-                    fluid
-                    selection
-                    value={this.state.complete_status}
-                    options={completeStatusOptions}
-                    /> */}
             </div>
           </Form>
           <Modal.Actions>
