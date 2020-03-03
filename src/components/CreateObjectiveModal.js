@@ -3,7 +3,8 @@ import { Button, Form, Modal } from "semantic-ui-react";
 
 const INITIAL_STATE = {
   title: "",
-  complete_status: false
+  open: false
+//   complete_status: false
 };
 
 // const completeStatusOptions = [
@@ -47,9 +48,14 @@ export default class CreateObjectiveModal extends Component {
   handleFormSubmit = e => {
     // debugger;
     e.preventDefault();
-    this.props.createObjective(this.state);
+    this.props.createObjective({
+        title: this.state.title,
+        complete_status: false,
+        user_id: this.props.user.id
+    });
     this.setState(INITIAL_STATE);
   };
+
   render() {
     //testing modal:
     const { open, closeOnEscape, closeOnDimmerClick } = this.state;

@@ -2,20 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  /* height: 55vmin; */
-  /* height: 60vh; */
-  pointer-events: none;
-}
-
-/* The below css makes the image on the homepage spin */
-
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
-
 .App-header {
   /* background-color: #282c34; */
   min-height: 100vh;
@@ -30,16 +16,6 @@
 .App-link {
   color: #61dafb;
 }
-
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
 
 body {
   background-color: black;
@@ -61,17 +37,27 @@ body {
   margin-top: 50px;
 }
 
+/* .App-logo { */
+  /* height: 55vmin; */
+  /* height: 60vh; */
+  /* pointer-events: none; */
+/* } */
 
-/* .objective-card {
-  width: 100%
+/* The below css makes the image on the homepage spin */
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 } */
 
-/* .home {
-  background-image: url("/sky-photo-314703.jpeg");
-  background-size: cover;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  height: 100vh;
-  width: 100vw;
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 } */
+

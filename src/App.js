@@ -57,8 +57,14 @@ class App extends Component {
   createObjective = (objective) => {
     console.log(objective)
     // console.log("fbdjgihngsmfrdnhiodnhghg")
-    api.data.postObjective({ objective })
-  }  
+    api.data.postObjective(objective)
+    .then(this.currentUser)
+  } 
+  
+  submitGoal = (goal) => {
+    api.data.patchGoal({...goal, complete_status: true})
+    .then(this.currentUser) 
+  }
 
   // Building State Function(s) ###########################
 
@@ -123,7 +129,8 @@ class App extends Component {
               render={(props) =>
                 <GoalsContainer
                   {...props}
-                  user={this.state.user}        
+                  user={this.state.user}  
+                  onSubmitGoal={this.submitGoal}      
                 />
               }
             />

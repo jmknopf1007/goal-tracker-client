@@ -1,29 +1,30 @@
 import React from 'react'
 import Goal from '../components/Goal'
-import {Button, Card} from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 import CreateGoalModal from '../components/CreateGoalModal'
 
 
-//import {Redirect} from 'react-router-dom'
-
-const GoalsContainer = ({user, match: {params}}) => {
+const GoalsContainer = (props) => {
 
     // console.log(props)
 
     const showGoals = () => {
-        // console.log(user)
-        let objective = user.objectives.find(obj => obj.id === parseInt(params.oid))
+        let objective = props.user.objectives.find(obj => obj.id === parseInt(props.match.params.oid))
         // console.log(objective)
         let goals = objective.goals
         return goals.map((goal, index) => {
+            if (goal.complete_status === false) {
 
-            return <Goal
-            goal={goal}
-            key={index}
-            user={user}
-            />
-        }
-        )
+                return <Goal
+                goal={goal}
+                key={index}
+                user={props.user}
+                // objective={props.objective}
+                onSubmitGoal={props.onSubmitGoal}
+                />
+
+            }
+        })
     }
 
     return (
@@ -35,7 +36,7 @@ const GoalsContainer = ({user, match: {params}}) => {
 
                         <CreateGoalModal />    
 
-                        {user.id ? showGoals() : null}
+                        {props.user.id ? showGoals() : null}
        
                     </Card.Content>
             </Card>

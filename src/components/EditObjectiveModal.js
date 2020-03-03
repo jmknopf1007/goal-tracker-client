@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import { Button, Form, Modal, Dropdown } from "semantic-ui-react";
+import { Button, Form, Modal } from "semantic-ui-react";
 
 const INITIAL_STATE = {
-  title: "",
+  title: '',
   complete_status: false
 };
 

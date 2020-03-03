@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Card} from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 import Objective from '../components/Objective'
 import CreateObjectiveModal from '../components/CreateObjectiveModal'
 
@@ -28,11 +28,11 @@ const ObjectivesContainer = (props) => {
     return (
         // <div class="ui container center aligned">
     //   <div className="objective-container">
-        <Card  class="objective-card"style={{ width: '70vw' }}>
+        <Card  className="objective-card"style={{ width: '70vw' }}>
             <Card.Content>
                 <Card.Header>Current Objectives:</Card.Header>
 
-                 <CreateObjectiveModal createObjective={props.createObjective}/>
+                 <CreateObjectiveModal createObjective={props.createObjective} user={props.user}/>
 
             {props.user.id ? showObjectives() : null}
         </Card.Content>
