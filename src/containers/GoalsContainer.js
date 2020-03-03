@@ -28,7 +28,7 @@ const GoalsContainer = ({user, match: {params}}) => {
 
     return (
         <div className="goal-container">
-            <Card style={{ width: 450 }}>
+            <Card style={{ width: '70vw' }}>
                  <Card.Content>
                     <Card.Header>Current Goals:</Card.Header>
         

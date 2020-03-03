@@ -6,8 +6,8 @@ import EditGoalModal from '../components/EditGoalModal'
 const Goal = ({ goal }) => {
  
     return (
-        <div className="goal-content">  
-            <Card style={{ width: '400px' }}>
+        // <div className="goal-content">  
+            <Card style={{ width: '70vw' }}>
                 <Card.Content>
                     <Card.Header>{goal.description}</Card.Header>
                         <Card.Meta>~ {goal.category}</Card.Meta>
@@ -20,7 +20,7 @@ const Goal = ({ goal }) => {
                                 </div>
                 </Card.Content>
             </Card>
-        </div>
+        // </div>
     )
 }
 

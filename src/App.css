@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 55vmin;
+  /* height: 55vmin; */
   /* height: 60vh; */
   pointer-events: none;
 }
@@ -17,7 +17,7 @@
 } */
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -31,44 +31,36 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
-.objective-container {
-  background-color: #551A8B;
-  height: 100vh;
-  width: 100vh;
-  border: white;
-  border-width: medium;
-}
-
-.objective-content {
-  text-align: left;
-  /* margin: 0 auto; */
-  /* align-items: center; */
-}
-
-.goal-container {
-  background-color: #cd5b45;
-  height: 100vh;
-  width: 100vh;
-  border: white;
-  border-width: medium;
-}
-
-.goal-content {
-  text-align: left;
-}
 
 body {
-  background-color: #282c34;
+  background-color: black;
+  /* background-color: #282c34; */
+  /* background-color: teal; */
 }
+
+.home {
+  background-image: url("/space-photo.jpeg");
+  background-size: cover;
+  position: fixed;
+  /* margin-top: 50px; */
+  height: 100vh;
+  /* opacity: 60%; */
+  width: 100vw;
+}
+
+.home-box {
+  margin-top: 50px;
+}
+
 
 /* .objective-card {
   width: 100%

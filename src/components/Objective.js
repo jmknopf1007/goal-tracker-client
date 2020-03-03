@@ -11,14 +11,11 @@ const Objective = (props) => {
     }
  
     return ( 
-        <div className="objective-content">  
-            <Card style={{ width: '400px' }}>
+        // <div className="objective-content">  
+            <Card style={{ width: '70vw' }}>
               <Card.Content>
                 <Card.Header>{props.objective.title}</Card.Header>
                 <Card.Meta>~</Card.Meta>
-                {/* <Card.Description>
-                  Steve wants to add you to the group <strong>best friends</strong>
-                </Card.Description> */}
               </Card.Content>
               <Card.Content extra>
                 <div className='ui buttons'>
@@ -34,7 +31,7 @@ const Objective = (props) => {
                 </div>
               </Card.Content>
             </Card>
-        </div>
+        // </div>
     )
 }
 

@@ -27,8 +27,8 @@ const ObjectivesContainer = (props) => {
 
     return (
         // <div class="ui container center aligned">
-      <div className="objective-container">
-        <Card  class="objective-card"style={{ width: 450 }}>
+    //   <div className="objective-container">
+        <Card  class="objective-card"style={{ width: '70vw' }}>
             <Card.Content>
                 <Card.Header>Current Objectives:</Card.Header>
 
@@ -37,7 +37,7 @@ const ObjectivesContainer = (props) => {
             {props.user.id ? showObjectives() : null}
         </Card.Content>
     </Card>
-    </div>
+    // </div>
     )
 }
 

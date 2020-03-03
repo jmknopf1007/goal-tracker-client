@@ -58,8 +58,8 @@ export default class CreateObjectiveModal extends Component {
         {/* {console.log(this.props)} */}
         <Button
           onClick={this.closeConfigShow(false, true)}
-          color="green"
-          inverted
+        //   color="teal"
+        //   inverted
         >
           Add Objective
         </Button>
@@ -99,7 +99,8 @@ export default class CreateObjectiveModal extends Component {
             </Button>
             <Button
               onClick={this.handleFormSubmit}
-              positive
+            //   positive
+              color='teal'
               labelPosition="right"
               icon="thumbs up"
               content="Submit"

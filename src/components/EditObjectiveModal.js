@@ -81,7 +81,8 @@ export default class EditObjectiveModal extends Component {
             </Button>
             <Button
               onClick={this.handleFormSubmit}
-              positive
+            //   positive
+              color='teal'
               labelPosition="right"
               icon="thumbs up"
               content="Submit"
