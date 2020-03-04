@@ -15,7 +15,17 @@ class Home extends Component {
                 <div className="home-box">
             {/* <Card style={{width: '40vw', color: 'teal', padding: '20px'}}> */}
                 <img src={Lightning} className="App-logo" style={{height: '50vh'}} alt="" />
-                {user.id ? <h1>Don't forget to shoot for the stars!</h1> : <h1>Welcome to the Goal Tracker!</h1>}
+                {user.id ? (
+                    <div className="app-header-text">
+                        <h1>Don't forget to shoot for the stars!</h1>
+                        <h1>Use the objectives tab above to begin your journey.</h1> 
+                    </div>
+                ) : (
+                    <div className="app-header-text-too">
+                        <h1>Welcome Elevate!</h1>
+                        <h1>An all purpose goal tracker.</h1>
+                     </div>
+                )}
                         <Grid className="homebox" verticalAlign='middle'>
                             <Grid.Column className="homecontent">
                                 <div className="homeimage"></div>

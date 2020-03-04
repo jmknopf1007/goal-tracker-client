@@ -34,7 +34,15 @@ body {
 }
 
 .home-box {
-  margin-top: 50px;
+  margin-top: 30px;
+}
+
+.homebuttonbox {
+  margin-top: 40px;
+}
+
+.app-header-text, .app-header-text-too {
+  margin-top: 20px;
 }
 
 /* .App-logo { */

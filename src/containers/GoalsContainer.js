@@ -36,14 +36,14 @@ const GoalsContainer = (props) => {
     return (
         <div className="goal-container">
             <Card style={{ width: '70vw' }}>
-                 <Card.Content>
-                    <Card.Header>Current Goals:</Card.Header>
-        
+                <Card.Content>
+                    <Card.Header>Current Goals: "{findObjective().title}"</Card.Header>
+                    <Card.Meta>~ Add to your list below!</Card.Meta>
+                </Card.Content>
+                        <Card.Content>
+                            <CreateGoalModal createGoal={potato} user={props.user}/>    
 
-                        <CreateGoalModal createGoal={potato} user={props.user}/>    
-
-                        {props.user.id ? showGoals() : null}
-       
+                            {props.user.id ? showGoals() : null}
                     </Card.Content>
             </Card>
 

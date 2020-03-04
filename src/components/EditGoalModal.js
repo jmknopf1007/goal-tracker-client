@@ -35,7 +35,7 @@ export default class EditGoalModal extends Component {
   closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
     this.setState({ closeOnEscape, closeOnDimmerClick, open: true, description: this.props.goal.description, category: this.props.goal.category });
   };
-  close = () => this.setState({ open: false,  });
+  close = () => this.setState({ open: false });
 
   handleCatChange = (e, { value }) => {
     console.log(value);
@@ -55,14 +55,12 @@ export default class EditGoalModal extends Component {
       day_count: 0,
       id: this.props.goal.id
     });
-    this.setState({
-        open: false
-    });
+    this.setState({ open: false });
   };
 
   render() {
     //testing modal:
-    const { open, closeOnEscape, closeOnDimmerClick, value } = this.state;
+    const { open, closeOnEscape, closeOnDimmerClick } = this.state;
     return (
       <div>
         <Button
@@ -109,7 +107,7 @@ export default class EditGoalModal extends Component {
             <Button
               onClick={this.handleFormSubmit}
             //   positive
-              color='teal'
+              color=''
               labelPosition="right"
               icon="thumbs up"
               content="Submit"

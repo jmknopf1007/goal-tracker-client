@@ -25,7 +25,7 @@ export default class EditObjectiveModal extends Component {
         user_id: this.props.user.id,
         id: this.props.objective.id
     });
-    this.setState({open: false})
+    this.setState({ open: false })
   };
 
   render() {
@@ -69,7 +69,7 @@ export default class EditObjectiveModal extends Component {
             <Button
               onClick={this.handleFormSubmit}
             //   positive
-              color='teal'
+              color=''
               labelPosition="right"
               icon="thumbs up"
               content="Submit"

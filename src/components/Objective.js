@@ -20,7 +20,7 @@ const Objective = (props) => {
               <Card.Content extra>
                 <div className='ui buttons'>
                 <Link to={`/users/objectives/${props.objective.id}/goals`}>
-                        <Button color="blue">
+                        <Button color="teal">
                             Goal List
                         </Button>
                     </Link>
