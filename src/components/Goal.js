@@ -10,11 +10,10 @@ const Goal = (props) => {
     }
  
     return (
-        // <div className="goal-content">  
-            <Card style={{ width: '70vw' }}>
+            <Card className='goal-content' style={{ width: '80vw' }}>
                 <Card.Content>
                     <Card.Header>{props.goal.description}</Card.Header>
-                        <Card.Meta>~ {props.goal.category}</Card.Meta>
+                        <Card.Meta color='red'>~ {props.goal.category}</Card.Meta>
                             </Card.Content>
                             <Card.Content extra>
                                 <div className='ui buttons'>
@@ -28,7 +27,6 @@ const Goal = (props) => {
                                 </div>
                 </Card.Content>
             </Card>
-        // </div>
     )
 }
 

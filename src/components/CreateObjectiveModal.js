@@ -73,7 +73,7 @@ export default class CreateObjectiveModal extends Component {
             <Button
               onClick={this.handleFormSubmit}
             //   positive
-              color=''
+            //   color=''
               labelPosition="right"
               icon="thumbs up"
               content="Submit"

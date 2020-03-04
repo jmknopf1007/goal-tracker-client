@@ -27,7 +27,7 @@ const ObjectivesContainer = (props) => {
     }
 
     return (
-        <Card  className="objective-card"style={{ width: '70vw' }}>
+        <Card  className="objective-container" style={{ width: '80vw' }}>
             <Card.Content>
                 <Card.Header>Current Objectives:</Card.Header>
                 <Card.Meta>~ Add to your list below!</Card.Meta>

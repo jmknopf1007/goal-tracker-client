@@ -10,9 +10,8 @@ const Objective = (props) => {
         props.onSubmitObjective(props.objective)
     }
  
-    return ( 
-        // <div className="objective-content">  
-            <Card style={{ width: '70vw' }}>
+    return (  
+            <Card className='objective-content' style={{ width: '80vw' }}>
               <Card.Content>
                 <Card.Header>{props.objective.title}</Card.Header>
                 <Card.Meta>~</Card.Meta>
@@ -33,7 +32,6 @@ const Objective = (props) => {
                 </div>
               </Card.Content>
             </Card>
-        // </div>
     )
 }
 

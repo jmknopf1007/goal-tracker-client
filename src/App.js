@@ -48,7 +48,7 @@ class App extends Component {
     localStorage.removeItem('token')
   }
   
-  // Updating State Function(s) ###########################
+  // Updating State Functions ###########################
 
   submitObjective = (objective) => {
     // console.log(objective)
@@ -87,7 +87,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Route path="/"
-          render={props =>
+          render={(props) =>
             <Navbar
               {...props}
               user={this.state.user}

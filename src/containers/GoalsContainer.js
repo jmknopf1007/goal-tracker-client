@@ -34,8 +34,7 @@ const GoalsContainer = (props) => {
         
 
     return (
-        <div className="goal-container">
-            <Card style={{ width: '70vw' }}>
+            <Card className="goal-container" style={{ width: '80vw' }}>
                 <Card.Content>
                     <Card.Header>Current Goals: "{findObjective().title}"</Card.Header>
                     <Card.Meta>~ Add to your list below!</Card.Meta>
@@ -46,8 +45,6 @@ const GoalsContainer = (props) => {
                             {props.user.id ? showGoals() : null}
                     </Card.Content>
             </Card>
-
-         </div>
 
     )
 

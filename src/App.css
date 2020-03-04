@@ -45,6 +45,19 @@ body {
   margin-top: 20px;
 }
 
+.objective-container {
+  /* background-color: red!important; */
+  background-image: linear-gradient(coral, blue)!important;
+}
+
+.goal-container {
+  background-image: linear-gradient(coral, blue)!important;
+}
+
+/* .goal-content {
+  color: white!important;
+} */
+
 /* .App-logo { */
   /* height: 55vmin; */
   /* height: 60vh; */
