@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import { Grid, Button } from 'semantic-ui-react'
-import Lightning from '../Lightning3.png'
+import Lightning from '../Lightning6.png'
 
 
 class Home extends Component {
