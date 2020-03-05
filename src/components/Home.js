@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import { Grid, Button } from 'semantic-ui-react'
-import Lightning from '../LightningGT.png'
+import Lightning from '../Lightning3.png'
 
 
 class Home extends Component {
@@ -14,7 +14,11 @@ class Home extends Component {
             <div className="home" >
                 <div className="home-box">
             {/* <Card style={{width: '40vw', color: 'teal', padding: '20px'}}> */}
+                {user.id ? (
                 <img src={Lightning} className="App-logo" style={{height: '50vh'}} alt="" />
+                ) : (
+                    <img src={Lightning} className="App-logo-too" style={{height: '50vh'}} alt="" />
+                )}
                 {user.id ? (
                     <div className="app-header-text">
                         <h1>Don't forget to shoot for the stars!</h1>

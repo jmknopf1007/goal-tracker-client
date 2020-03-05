@@ -8,9 +8,9 @@ export default class EditObjectiveModal extends Component {
      };
 
   closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
-    this.setState({ closeOnEscape, closeOnDimmerClick, open: true });
+    this.setState({ closeOnEscape, closeOnDimmerClick, open: true, title: this.props.objective.title});
   };
-  close = () => this.setState({ open: false, title: this.props.objective.title});
+  close = () => this.setState({ open: false});
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -71,7 +71,7 @@ export default class EditObjectiveModal extends Component {
             //   positive
             //   color=''
               labelPosition="right"
-              icon="thumbs up"
+              icon="checkmark"
               content="Submit"
             />
           </Modal.Actions>

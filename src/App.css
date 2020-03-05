@@ -54,31 +54,35 @@ body {
   background-image: linear-gradient(coral, blue)!important;
 }
 
+/* .objective-content {
+  box-shadow: 10px 10px!important;
+  background-color: silver!important;
+} */
+
 /* .goal-content {
   color: white!important;
 } */
 
-/* .App-logo { */
-  /* height: 55vmin; */
-  /* height: 60vh; */
-  /* pointer-events: none; */
-/* } */
+/* .App-logo { 
+  height: 55vmin;
+  height: 60vh;
+  pointer-events: none;
+ } */
 
 /* The below css makes the image on the homepage spin */
 
-/* @media (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 10s linear;
   }
-} */
+}
 
-
-/* @keyframes App-logo-spin {
+@keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-} */
+}
 

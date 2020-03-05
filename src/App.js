@@ -50,38 +50,40 @@ class App extends Component {
   
   // Updating State Functions ###########################
 
+  
+  createObjective = (objective) => {
+    // console.log(objective)
+    api.data.postObjective({...objective})
+    .then(this.currentUser)
+  } 
+  
+  editObjective = (objective) => {
+    api.data.patchObjective(objective)
+    .then(this.currentUser)
+  }
+  
   submitObjective = (objective) => {
     // console.log(objective)
     api.data.patchObjective({...objective, complete_status: true})
     .then(this.currentUser)
     }
 
-  createObjective = (objective) => {
-    // console.log(objective)
-    api.data.postObjective({...objective})
-    .then(this.currentUser)
-  } 
-
-  editObjective = (objective) => {
-    api.data.patchObjective(objective)
-    .then(this.currentUser)
-  }
-  
-  submitGoal = (goal) => {
-    api.data.patchGoal({...goal, complete_status: true})
-    .then(this.currentUser) 
-  }
-
   createGoal = (goal, objective) => {
     api.data.postGoal({...goal, objective_id: objective.id})
     .then(this.currentUser)
   }
-
+    
   editGoal = (goal) => {
     api.data.patchThisGoal(goal)//.then(console.log)
     .then(this.currentUser)
   }
 
+  submitGoal = (goal) => {
+    api.data.patchGoal({...goal, complete_status: true})
+    .then(this.currentUser) 
+  }
+
+  
   render() {
     return (
       <Router>

@@ -23,7 +23,13 @@ const Goal = (props) => {
                                      user={props.user}
                                      editGoal={props.editGoal}
                                     />
-                                    <Button onClick={handleSubmit}>Submit</Button>
+                                    <Button 
+                                        onClick={handleSubmit} 
+                                        labelPosition="right" 
+                                        icon="checkmark" 
+                                        content="Submit" 
+                                    />
+                                    {/* <Button onClick={handleSubmit}>Submit</Button> */}
                                 </div>
                 </Card.Content>
             </Card>

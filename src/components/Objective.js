@@ -28,7 +28,12 @@ const Objective = (props) => {
                     user={props.user}
                     editObjective={props.editObjective}
                     />
-                  <Button onClick={handleSubmit}>Submit</Button>
+                  <Button 
+                    onClick={handleSubmit} 
+                    labelPosition="right" 
+                    icon="checkmark" 
+                    content="Submit" 
+                  />
                 </div>
               </Card.Content>
             </Card>

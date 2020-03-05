@@ -109,7 +109,7 @@ export default class EditGoalModal extends Component {
             //   positive
             //   color=''
               labelPosition="right"
-              icon="thumbs up"
+              icon="checkmark"
               content="Submit"
             />
           </Modal.Actions>

@@ -127,7 +127,7 @@ export default class CreateGoalModal extends Component {
               // positive
               // color=''
               labelPosition="right"
-              icon="thumbs up"
+              icon="checkmark"
               content="Submit"
             />
           </Modal.Actions>
