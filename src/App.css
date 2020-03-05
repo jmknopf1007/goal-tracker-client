@@ -54,14 +54,14 @@ body {
   background-image: linear-gradient(coral, blue)!important;
 }
 
-/* .objective-content {
-  box-shadow: 10px 10px!important;
-  background-color: silver!important;
-} */
+.objective-content {
+  /* box-shadow: 10px 10px!important; */
+  background-color: pink!important;
+}
 
-/* .goal-content {
-  color: white!important;
-} */
+.goal-content {
+  background-color: pink!important;
+}
 
 /* .App-logo { 
   height: 55vmin;
