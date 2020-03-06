@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import { Grid, Button } from 'semantic-ui-react'
-import Lightning from '../Lightning7.png'
+import Lightning from '../Lightning8.png'
 
 
 class Home extends Component {
@@ -26,7 +26,7 @@ class Home extends Component {
                     </div>
                 ) : (
                     <div className="app-header-text-too">
-                        <h1>Welcome Elevate!</h1>
+                        <h1>Welcome to Elevate!</h1>
                         <h1>An all purpose goal tracker.</h1>
                      </div>
                 )}
