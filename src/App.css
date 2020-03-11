@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  /* justify-content: center; */
 }
 
 .App-header {
@@ -19,6 +20,7 @@
 
 body {
   background-color: black;
+  /* background-image: url("/space-photo.jpeg"); */
   /* background-color: #282c34; */
   /* background-color: teal; */
 }
@@ -33,8 +35,20 @@ body {
   width: 100vw;
 }
 
+.home-too {
+  background-image: url("/space-photo.jpeg");
+  background-size: cover;
+  position: fixed;
+  /* margin-top: 50px; */
+  height: 100vh;
+  /* opacity: 60%; */
+  width: 100vw;
+}
+
 .home-box {
   margin-top: 30px;
+  /* position: fixed; */
+  /* display: inline-block; */
 }
 
 .homebuttonbox {
@@ -86,3 +100,48 @@ body {
   }
 }
 
+/* The below css makes the background image scroll infinitely */
+
+.home {
+  position:fixed;
+   background:url("/space-photo.jpeg");
+  -webkit-animation:100s scroll infinite linear;
+  -moz-animation:100s scroll infinite linear;
+  -o-animation:100s scroll infinite linear;
+  -ms-animation:100s scroll infinite linear;
+  animation:100s scroll infinite linear;
+  /* top:0; */
+  /* left:0; */
+  width:100%;
+ height:100%;
+}
+ 
+@-webkit-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@-moz-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@-o-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@-ms-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}

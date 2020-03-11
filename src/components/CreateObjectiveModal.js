@@ -75,8 +75,8 @@ export default class CreateObjectiveModal extends Component {
             //   positive
             //   color='silver'
               labelPosition="right"
-              icon="checkmark"
-              content="Submit"
+              icon="thumbs up"
+              content="Save"
             />
           </Modal.Actions>
         </Modal>

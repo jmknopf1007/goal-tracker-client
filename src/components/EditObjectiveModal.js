@@ -71,8 +71,8 @@ export default class EditObjectiveModal extends Component {
             //   positive
             //   color=''
               labelPosition="right"
-              icon="checkmark"
-              content="Submit"
+              icon="thumbs up"
+              content="Save"
             />
           </Modal.Actions>
         </Modal>
