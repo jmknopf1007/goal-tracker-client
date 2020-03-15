@@ -20,17 +20,27 @@
 
 body {
   background-color: black;
+  /* min-height: 100%;
+  min-height: 100vh;
+  position: relative; */
   /* background-image: url("/space-photo.jpeg"); */
   /* background-color: #282c34; */
   /* background-color: teal; */
 }
 
+.footer {
+  margin-top: 2vh;
+  background-color: teal;
+}
+
 .home {
   background-image: url("/space-photo.jpeg");
   background-size: cover;
-  position: fixed;
+  /* position: fixed; */
+  /* position: relative; */
   /* margin-top: 50px; */
   height: 100vh;
+  /* min-height: 100%; */
   /* opacity: 60%; */
   width: 100vw;
 }
@@ -38,7 +48,7 @@ body {
 .home-too {
   background-image: url("/space-photo.jpeg");
   background-size: cover;
-  position: fixed;
+  /* position: relative; */
   /* margin-top: 50px; */
   height: 100vh;
   /* opacity: 60%; */

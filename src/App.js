@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Login from './components/Login'
 import Signup from './components/Signup'
+import Footer from './components/Footer'
 import { api } from './services/api'
 import './App.css';
 
@@ -145,6 +146,13 @@ class App extends Component {
               }
             />
           </header>
+             <Route
+              path="/"
+              render={props => 
+              <Footer 
+              {...props} 
+              />}
+            />
         </div>
       </Router>
     );
