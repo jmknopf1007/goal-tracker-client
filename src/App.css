@@ -36,6 +36,7 @@ body {
 .home {
   background-image: url("/space-photo.jpeg");
   background-size: cover;
+  position:fixed;
   /* position: fixed; */
   /* position: relative; */
   /* margin-top: 50px; */
@@ -48,6 +49,7 @@ body {
 .home-too {
   background-image: url("/space-photo.jpeg");
   background-size: cover;
+  position: fixed;
   /* position: relative; */
   /* margin-top: 50px; */
   height: 100vh;
@@ -113,8 +115,7 @@ body {
 /* The below css makes the background image scroll infinitely */
 
 .home {
-  position:fixed;
-   background:url("/space-photo.jpeg");
+   /* background:url("/space-photo.jpeg"); */
   -webkit-animation:100s scroll infinite linear;
   -moz-animation:100s scroll infinite linear;
   -o-animation:100s scroll infinite linear;
