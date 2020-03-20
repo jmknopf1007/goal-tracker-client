@@ -1,5 +1,5 @@
 // const API_ROOT = 'http://localhost:4000';
-const API_ROOT = 'https://my-goal-tracker-app-client.herokuapp.com/';
+const API_ROOT = 'https://my-goal-tracker-app-client.herokuapp.com';
 
 const token = () => localStorage.getItem("token")
 
