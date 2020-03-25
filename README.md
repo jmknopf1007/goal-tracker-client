@@ -1,4 +1,4 @@
-## Elevate!
+# Elevate!
 
 Elevate! is a web application that helps users streamline as well as<br>
 organize their daily goals for a given objective (ex. "Learn Python").<br>
