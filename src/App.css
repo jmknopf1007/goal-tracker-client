@@ -1,10 +1,8 @@
 .App {
   text-align: center;
-  /* justify-content: center; */
 }
 
 .App-header {
-  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -20,12 +18,6 @@
 
 body {
   background-color: black;
-  /* min-height: 100%;
-  min-height: 100vh;
-  position: relative; */
-  /* background-image: url("/space-photo.jpeg"); */
-  /* background-color: #282c34; */
-  /* background-color: teal; */
 }
 
 .footer {
@@ -37,12 +29,7 @@ body {
   background-image: url("/space-photo.jpeg");
   background-size: cover;
   position:fixed;
-  /* position: fixed; */
-  /* position: relative; */
-  /* margin-top: 50px; */
   height: 100vh;
-  /* min-height: 100%; */
-  /* opacity: 60%; */
   width: 100vw;
 }
 
@@ -50,17 +37,12 @@ body {
   background-image: url("/space-photo.jpeg");
   background-size: cover;
   position: fixed;
-  /* position: relative; */
-  /* margin-top: 50px; */
   height: 100vh;
-  /* opacity: 60%; */
   width: 100vw;
 }
 
 .home-box {
   margin-top: 30px;
-  /* position: fixed; */
-  /* display: inline-block; */
 }
 
 .homebuttonbox {
@@ -72,7 +54,6 @@ body {
 }
 
 .objective-container {
-  /* background-color: red!important; */
   background-image: linear-gradient(coral, blue)!important;
 }
 
@@ -81,19 +62,12 @@ body {
 }
 
 .objective-content {
-  /* box-shadow: 10px 10px!important; */
   background-color: pink!important;
 }
 
 .goal-content {
   background-color: pink!important;
 }
-
-/* .App-logo { 
-  height: 55vmin;
-  height: 60vh;
-  pointer-events: none;
- } */
 
 /* The below css makes the image on the homepage spin */
 
@@ -115,14 +89,11 @@ body {
 /* The below css makes the background image scroll infinitely */
 
 .home {
-   /* background:url("/space-photo.jpeg"); */
   -webkit-animation:100s scroll infinite linear;
   -moz-animation:100s scroll infinite linear;
   -o-animation:100s scroll infinite linear;
   -ms-animation:100s scroll infinite linear;
   animation:100s scroll infinite linear;
-  /* top:0; */
-  /* left:0; */
   width:100%;
  height:100%;
 }
