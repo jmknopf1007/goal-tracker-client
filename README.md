@@ -7,7 +7,11 @@ learning a new skill easier, and more efficient.
 
 https://my-goal-tracker-app-client.herokuapp.com/
 
-# Built With
+## Demo
+
+![](ElevateApp.gif)
+
+## Built With
 
 ruby ~> 2.6.1<br>
 rails ~> 6.0.2<br>
@@ -18,9 +22,20 @@ npm ~> 6.13.7<br>
 node ~> 13.3.0<br>
 activerecord-reset-pk-sequence<br>
 
-# Project Status
+## How to navigate this program
+
+The program is built to guide you through:<br>
+- it will handle all user inputs<br>
+- you can create a new user account<br>
+- you can add a new objective<br>
+- you can edit an existing objective<br>
+- you can add a new goal<br>
+- you can edit an existing goal<br>
+
+## Project Status
 
 For the next version of this app I would like to add a Completed Objectives page.<br>
 This page will document all of the completed objectives/ goals for a specific user,<br>
 and also have charts, graphs, and other visual elements to provide further analysis<br>
-on a user's progress with each of their objectives.    
+on a user's progress with each of their objectives.  
+  
