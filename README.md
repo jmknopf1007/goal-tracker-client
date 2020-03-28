@@ -17,9 +17,9 @@ ruby ~> 2.6.1<br>
 rails ~> 6.0.2<br>
 pg ~> 12.0<br>
 bcrypt ~> 3.1.7<br>
-semantic-ui-react ~> 0.88.2<br>
 npm ~> 6.13.7<br>
 node ~> 13.3.0<br>
+semantic-ui-react ~> 0.88.2<br>
 activerecord-reset-pk-sequence<br>
 pictures from pexels.com<br>
 
