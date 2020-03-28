@@ -15,6 +15,7 @@ https://my-goal-tracker-app-client.herokuapp.com/
 
 ruby ~> 2.6.1<br>
 rails ~> 6.0.2<br>
+react ~> 16.12.0<br>
 pg ~> 12.0<br>
 bcrypt ~> 3.1.7<br>
 npm ~> 6.13.7<br>
