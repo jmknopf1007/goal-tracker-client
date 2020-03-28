@@ -5,7 +5,7 @@ organize their daily goals for a given objective (ex. "Learn Python").<br>
 The idea for this app was to create a tool to help making the process of<br>
 learning a new skill easier, and more efficient. 
 
-https://my-goal-tracker-app-client.herokuapp.com/
+https://my-goal-tracker-app-client.herokuapp.com
 
 ## Demo
 
@@ -22,7 +22,7 @@ npm ~> 6.13.7<br>
 node ~> 13.3.0<br>
 semantic-ui-react ~> 0.88.2<br>
 activerecord-reset-pk-sequence<br>
-pictures from pexels.com<br>
+pictures from https://www.pexels.com<br>
 
 ## How to navigate this program
 
