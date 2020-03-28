@@ -21,6 +21,7 @@ semantic-ui-react ~> 0.88.2<br>
 npm ~> 6.13.7<br>
 node ~> 13.3.0<br>
 activerecord-reset-pk-sequence<br>
+pictures from pexels.com<br>
 
 ## How to navigate this program
 
@@ -38,4 +39,3 @@ For the next version of this app I would like to add a Completed Objectives page
 This page will document all of the completed objectives/ goals for a specific user,<br>
 and also have charts, graphs, and other visual elements to provide further analysis<br>
 on a user's progress with each of their objectives.  
-  
