@@ -5,7 +5,9 @@ organize their daily goals for a given objective (ex. "Learn Python").<br>
 The idea for this app was to create a tool to help making the process of<br>
 learning a new skill easier, and more efficient. 
 
-https://my-goal-tracker-app-client.herokuapp.com
+app link- https://my-goal-tracker-app-client.herokuapp.com
+
+full walkthrough- https://www.youtube.com/watch?v=PnQ7WJl85m0&feature=youtu.be
 
 ## Demo
 
