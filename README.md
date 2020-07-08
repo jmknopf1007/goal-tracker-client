@@ -5,7 +5,7 @@ daily, weekly, monthly, and yearly goals for a given objective (ex. "Learn Pytho
 The idea for this app was to create a tool to help make the process of learning  
 a new skill easier, and more efficient. 
 
-**App Link:** https://my-goal-tracker-app-client.herokuapp.com
+**App Link:** https://my-goal-tracker-app.herokuapp.com
 
 **Full Walkthrough:** https://www.youtube.com/watch?v=PnQ7WJl85m0&feature=youtu.be
 
