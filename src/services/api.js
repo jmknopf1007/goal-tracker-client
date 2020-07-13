@@ -5,15 +5,15 @@ const token = () => localStorage.getItem("token")
 
 const headers = () => {
   return {
-    "Content-Type": 'application/json',
-    "Accept": 'application/json',
+    "Content-Type": "application/json",
+    "Accept": "application/json",
     "Authorization": token()
   }
 }
 
 const login = data => { //data needs to have EXACTLY a username and a password
   return fetch(`${API_ROOT}/api/v1/auth`, {
-    method: 'POST',
+    method: "POST",
     headers: headers(),
     body: JSON.stringify(data)
   }).then(res => res.json())
