@@ -91,7 +91,7 @@ export default class EditGoalModal extends Component {
                     placeholder="Description"
                 />
                 <Dropdown 
-                    placeholder='Category'
+                    placeholder="Category"
                     fluid
                     selection
                     value={this.state.data.category}

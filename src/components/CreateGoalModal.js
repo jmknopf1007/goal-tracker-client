@@ -108,7 +108,7 @@ export default class CreateGoalModal extends Component {
                     placeholder="Category- daily, weekly, monthly, or yearly"
                 /> */}
                     <Dropdown 
-                    placeholder='Select Category'
+                    placeholder="Select Category"
                     fluid
                     selection
                     name="Category"
