@@ -14,10 +14,10 @@ class Home extends Component {
             <>
             {user.id ? (
             <div className="home-too" >
-            <div className="home-box">
-            {/* <Card style={{width: '40vw', color: 'teal', padding: '20px'}}> */}
-            {user.id ? (
-            <img src={Lightning} className="App-logo" style={{height: '50vh'}} alt="" />
+                <div className="home-box">
+                {/* <Card style={{width: '40vw', color: 'teal', padding: '20px'}}> */}
+                {user.id ? (
+                <img src={Lightning} className="App-logo" style={{height: '50vh'}} alt="" />
             ) : (
                 <img src={Lightning} className="App-logo-too" style={{height: '50vh'}} alt="" />
             )}
@@ -51,10 +51,10 @@ class Home extends Component {
             </div> )
             : 
                 ( <div className="home" >
-                    <div className="home-box">
-                {/* <Card style={{width: '40vw', color: 'teal', padding: '20px'}}> */}
-                    {user.id ? (
-                    <img src={Lightning} className="App-logo" style={{height: '50vh'}} alt="" />
+                        <div className="home-box">
+                        {/* <Card style={{width: '40vw', color: 'teal', padding: '20px'}}> */}
+                        {user.id ? (
+                        <img src={Lightning} className="App-logo" style={{height: '50vh'}} alt="" />
                     ) : (
                         <img src={Lightning} className="App-logo-too" style={{height: '50vh'}} alt="" />
                     )}
