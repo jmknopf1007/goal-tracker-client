@@ -28,7 +28,7 @@ class Home extends Component {
                 </div>
             ) : (
                 <div className="app-header-text-too">
-                    <h1><strong>Welcome to Elevate!</strong></h1>
+                    <h1>Welcome to Elevate!</h1>
                     <h1><em>An all purpose goal tracker</em></h1>
                 </div>
             )}
@@ -66,7 +66,7 @@ class Home extends Component {
                         </div>
                     ) : (
                         <div className="app-header-text-too">
-                            <h1><strong>Welcome to Elevate!</strong></h1>
+                            <h1>Welcome to Elevate!</h1>
                             <h1><em>An all purpose goal tracker</em></h1>
                         </div>
                     )}
