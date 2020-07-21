@@ -29,7 +29,6 @@ class Home extends Component {
             ) : (
                 <div className="app-header-text-too">
                     <h1>Welcome to Elevate!</h1>
-                    <h1><em>An all purpose goal tracker</em></h1>
                 </div>
             )}
                     <Grid className="homebox" verticalAlign='middle'>
@@ -67,7 +66,6 @@ class Home extends Component {
                     ) : (
                         <div className="app-header-text-too">
                             <h1>Welcome to Elevate!</h1>
-                            <h1><em>An all purpose goal tracker</em></h1>
                         </div>
                     )}
                             <Grid className="homebox" verticalAlign='middle'>
