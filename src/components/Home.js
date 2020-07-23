@@ -39,8 +39,8 @@ class Home extends Component {
                                 <></>
                             ) : (
                                 <div className="homebuttonbox">
-                                    <Button size="huge" color="teal" as={Link} to='/login'>Login</Button>
-                                    <Button size="huge" color="teal" as={Link} to='/signup'>Signup</Button>
+                                    <Button size="huge" color="teal" as={Link} to='/login'>Log In</Button>
+                                    <Button size="huge" color="teal" as={Link} to='/signup'>Sign Up</Button>
                                 </div>
                             )}
                 </Grid.Column>
@@ -76,8 +76,8 @@ class Home extends Component {
                                         <></>
                                     ) : (
                                         <div className="homebuttonbox">
-                                            <Button size="huge" color="teal" as={Link} to='/login'>Login</Button>
-                                            <Button size="huge" color="teal" as={Link} to='/signup'>Signup</Button>
+                                            <Button size="huge" color="teal" as={Link} to='/login'>Log In</Button>
+                                            <Button size="huge" color="teal" as={Link} to='/signup'>Sign Up</Button>
                                         </div>
                                     )}
                         </Grid.Column>
