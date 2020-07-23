@@ -26,7 +26,7 @@ const Navbar = ({user, onLogout, history}) => {
             ) : (
                 <>
                     <Menu.Item position="right" as={NavLink} exact to='/login'>Login</Menu.Item>
-                    <Menu.Item as={NavLink} exact to='/signup'>Sign up</Menu.Item>
+                    <Menu.Item as={NavLink} exact to='/signup'>Sign Up</Menu.Item>
                 </>
             )}
         </Menu>

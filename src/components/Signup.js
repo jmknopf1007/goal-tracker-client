@@ -80,11 +80,11 @@ class Signup extends Component {
                 fluid size='large'
                 onClick={this.handleClick}
               >
-                Sign up 
+                Sign Up 
               </Button>
             </Form>
             <Header as='h1' inverted textAlign='center'>
-              If you already have an account, please <Link to='/login'>Log In</Link>
+              Already have an account? <Link to='/login'>Login</Link>
             </Header>
           </Grid.Column>
         </Grid>
