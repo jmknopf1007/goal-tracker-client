@@ -84,7 +84,7 @@ class Signup extends Component {
               </Button>
             </Form>
             <Header as='h1' inverted textAlign='center'>
-              Already have an account? <Link to='/login'>Login</Link>
+              Already have an account? <Link to='/login'>Log In</Link>
             </Header>
           </Grid.Column>
         </Grid>

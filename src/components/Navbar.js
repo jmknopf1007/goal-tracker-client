@@ -21,11 +21,11 @@ const Navbar = ({user, onLogout, history}) => {
                 <>
                     <Menu.Item as={NavLink} exact to={`/users/objectives`}>Objectives</Menu.Item>
                     <Menu.Item position="right">Welcome, {user.fullname}!</Menu.Item>
-                    <Menu.Item onClick={handleClick}>Logout</Menu.Item>
+                    <Menu.Item onClick={handleClick}>Log Out</Menu.Item>
                 </>
             ) : (
                 <>
-                    <Menu.Item position="right" as={NavLink} exact to='/login'>Login</Menu.Item>
+                    <Menu.Item position="right" as={NavLink} exact to='/login'>Log In</Menu.Item>
                     <Menu.Item as={NavLink} exact to='/signup'>Sign Up</Menu.Item>
                 </>
             )}

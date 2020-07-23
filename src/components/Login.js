@@ -31,7 +31,7 @@ handleChange = e =>
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
           <Grid.Column style={{ maxWidth: 450 }}>
             <Header as='h1' inverted textAlign='center'>
-              Please login
+              Please log in 
             </Header>
             <Form size='small'>
               <Form.Input 
@@ -60,7 +60,7 @@ handleChange = e =>
                 size='large'
                 onClick={this.handleClick}
               >
-                Login
+                Log In 
               </Button>
             </Form>
             <Header as='h1' inverted textAlign='center'>
