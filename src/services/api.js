@@ -13,7 +13,7 @@ const headers = () => {
 
 const login = data => { //data needs to have EXACTLY a username and a password
   return fetch(`${API_ROOT}/api/v1/auth`, {
-    method: "POST",
+    method: 'POST',
     headers: headers(),
     body: JSON.stringify(data)
   }).then(res => res.json())
@@ -27,14 +27,14 @@ const getCurrentUser = () => {
 
 const postUser = user =>
   fetch(`${API_ROOT}/users`, {
-    method: "POST",
+    method: 'POST',
     headers: { "Content-Type": "application/json", "Accept": "application/json" },
     body: JSON.stringify(user)
   }).then(r => r.json())
 
 const postObjective = (objective) => {
   return fetch(`${API_ROOT}/objectives`, {
-    method: "POST",
+    method: 'POST',
     headers: { "Content-Type": "application/json", "Accept": "application/json" },
     body: JSON.stringify({
       objective: objective
@@ -44,7 +44,7 @@ const postObjective = (objective) => {
 
 const patchObjective = (objective) => {
   return fetch(`${API_ROOT}/objectives/${objective.id}`, {
-    method: "PATCH",
+    method: 'PATCH',
     headers: { "Content-Type": "application/json", "Accept": "application/json" },
     body: JSON.stringify({
       objective: objective
@@ -54,7 +54,7 @@ const patchObjective = (objective) => {
 
 const postGoal = (goal) => {
   return fetch(`${API_ROOT}/goals`, {
-    method: "POST",
+    method: 'POST',
     headers: { "Content-Type": "application/json", "Accept": "application/json" },
     body: JSON.stringify({
       goal: goal
@@ -66,7 +66,7 @@ const patchGoal = (goal) => {
   // console.log(objective)
   console.log(goal)
   return fetch(`${API_ROOT}/goals/${goal.id}`, {
-    method: "PATCH",
+    method: 'PATCH',
     headers: { "Content-Type": "application/json", "Accept": "application/json" },
     body: JSON.stringify({
       goal: goal
@@ -78,7 +78,7 @@ const patchThisGoal = (goal) => {
   // console.log(objective)
   console.log(goal)
   return fetch(`${API_ROOT}/goals/${goal.id}`, {
-    method: "PATCH",
+    method: 'PATCH',
     headers: { "Content-Type": "application/json", "Accept": "application/json" },
     body: JSON.stringify({
       goal: {...goal, category: goal.data.category}
