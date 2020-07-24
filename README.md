@@ -7,7 +7,7 @@ a new skill easier, and more efficient.
 
 **App Link:** https://my-goal-tracker-app.herokuapp.com
 
-**Full Walkthrough:** https://www.youtube.com/watch?v=PnQ7WJl85m0&feature=youtu.be
+**Full Walkthrough:** https://www.youtube.com/watch?v=TPOztVkmaYI
 
 ## Demo
 
