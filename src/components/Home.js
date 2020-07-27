@@ -15,7 +15,6 @@ class Home extends Component {
             {user.id ? (
             <div className="home-too" >
                 <div className="home-box">
-                {/* <Card style={{width: '40vw', color: 'teal', padding: '20px'}}> */}
                 {user.id ? (
                 <img src={Lightning} className="App-logo" style={{height: '50vh'}} alt="" />
             ) : (
@@ -31,28 +30,23 @@ class Home extends Component {
                     <h1>Welcome to Elevate!</h1>
                 </div>
             )}
-                    <Grid className="homebox" verticalAlign='middle'>
-                        <Grid.Column className="homecontent">
-                            <div className="homeimage"></div>
-                            <div className="homespacer"></div>
+                    <Grid className="home-content" verticalAlign='middle'>
+                        <Grid.Column>
                             {user.id ? (
                                 <></>
                             ) : (
-                                <div className="homebuttonbox">
+                                <div className="home-button-box">
                                     <Button size="huge" color="teal" as={Link} to='/login'>Log In</Button>
                                     <Button size="huge" color="teal" as={Link} to='/signup'>Sign Up</Button>
                                 </div>
                             )}
-                </Grid.Column>
-            </Grid>
-            {/* </Card> */}
-            </div>
-
+                        </Grid.Column>
+                    </Grid>
+                </div>
             </div> )
             : 
                 ( <div className="home" >
                         <div className="home-box">
-                        {/* <Card style={{width: '40vw', color: 'teal', padding: '20px'}}> */}
                         {user.id ? (
                         <img src={Lightning} className="App-logo" style={{height: '50vh'}} alt="" />
                     ) : (
@@ -68,24 +62,20 @@ class Home extends Component {
                             <h1>Welcome to Elevate!</h1>
                         </div>
                     )}
-                            <Grid className="homebox" verticalAlign='middle'>
-                                <Grid.Column className="homecontent">
-                                    <div className="homeimage"></div>
-                                    <div className="homespacer"></div>
+                            <Grid className="home-content" verticalAlign='middle'>
+                                <Grid.Column>
                                     {user.id ? (
                                         <></>
                                     ) : (
-                                        <div className="homebuttonbox">
+                                        <div className="home-button-box">
                                             <Button size="huge" color="teal" as={Link} to='/login'>Log In</Button>
                                             <Button size="huge" color="teal" as={Link} to='/signup'>Sign Up</Button>
                                         </div>
                                     )}
-                        </Grid.Column>
-                    </Grid>
-                    {/* </Card> */}
+                                </Grid.Column>
+                            </Grid>
+                        </div>
                     </div>
-                    
-                </div>
                      )
                  }
             </>
