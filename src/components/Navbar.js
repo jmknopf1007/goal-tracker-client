@@ -21,7 +21,7 @@ const Navbar = ({user, onLogout, history}) => {
                 <>
                     <Menu.Item as={NavLink} exact to={`/users/objectives`}>Objectives</Menu.Item>
                     <Menu.Item position="right">Welcome, {user.fullname}!</Menu.Item>
-                    <Menu.Item as={NavLink} onClick={handleClick}>Log Out</Menu.Item>
+                    <Menu.Item onClick={handleClick}>Log Out</Menu.Item>
                 </>
             ) : (
                 <>
