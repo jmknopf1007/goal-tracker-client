@@ -29,7 +29,6 @@ const Goal = (props) => {
                                         icon="checkmark" 
                                         content="Submit" 
                                     />
-                                    {/* <Button onClick={handleSubmit}>Submit</Button> */}
                                 </div>
                 </Card.Content>
             </Card>
