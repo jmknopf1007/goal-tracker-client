@@ -76,8 +76,7 @@ class Home extends Component {
                             </Grid>
                         </div>
                     </div>
-                     )
-                 }
+                )}
             </>
         )
     }
