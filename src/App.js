@@ -88,7 +88,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <div className="app">
           <Route path="/"
           render={(props) =>
             <Navbar
@@ -98,7 +98,7 @@ class App extends Component {
               />
             }
             />
-          <header className="App-header">
+          <header className="app-header">
 
             <Route path="/" exact
               render={() =>

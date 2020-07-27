@@ -16,9 +16,9 @@ class Home extends Component {
             <div className="home-too" >
                 <div className="home-box">
                 {user.id ? (
-                <img src={Lightning} className="App-logo" style={{height: '50vh'}} alt="" />
+                <img src={Lightning} className="app-logo" style={{height: '50vh'}} alt="" />
             ) : (
-                <img src={Lightning} className="App-logo-too" style={{height: '50vh'}} alt="" />
+                <img src={Lightning} className="app-logo-too" style={{height: '50vh'}} alt="" />
             )}
             {user.id ? (
                 <div className="app-header-text">
@@ -48,9 +48,9 @@ class Home extends Component {
                 ( <div className="home" >
                         <div className="home-box">
                         {user.id ? (
-                        <img src={Lightning} className="App-logo" style={{height: '50vh'}} alt="" />
+                        <img src={Lightning} className="app-logo" style={{height: '50vh'}} alt="" />
                     ) : (
-                        <img src={Lightning} className="App-logo-too" style={{height: '50vh'}} alt="" />
+                        <img src={Lightning} className="app-logo-too" style={{height: '50vh'}} alt="" />
                     )}
                     {user.id ? (
                         <div className="app-header-text">
