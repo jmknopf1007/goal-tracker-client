@@ -35,7 +35,6 @@ const categoryOptions = [
 
 
 export default class CreateGoalModal extends Component {
-  //testing modal click functionality
   state = { open: false };
   closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
     this.setState({ closeOnEscape, closeOnDimmerClick, open: true });
@@ -69,7 +68,6 @@ export default class CreateGoalModal extends Component {
   };
 
   render() {
-    //testing modal:
     const { open, closeOnEscape, closeOnDimmerClick, value } = this.state;
     return (
       <div>

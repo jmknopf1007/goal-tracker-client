@@ -29,7 +29,6 @@ export default class EditObjectiveModal extends Component {
   };
 
   render() {
-    //testing modal:
     const { open, closeOnEscape, closeOnDimmerClick } = this.state;
     return (
       <div>

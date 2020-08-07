@@ -26,7 +26,6 @@ import { Button, Form, Modal, Dropdown } from "semantic-ui-react";
   ]
   
 export default class EditGoalModal extends Component {
-  //testing modal click functionality
   state = { 
       description: this.props.goal.description,
       data: {category: this.props.goal.category},
@@ -59,7 +58,6 @@ export default class EditGoalModal extends Component {
   };
 
   render() {
-    //testing modal:
     const { open, closeOnEscape, closeOnDimmerClick } = this.state;
     return (
       <div>

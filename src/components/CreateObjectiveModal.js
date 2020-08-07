@@ -7,7 +7,6 @@ const INITIAL_STATE = {
 };
 
 export default class CreateObjectiveModal extends Component {
-  //testing modal click functionality
   state = { open: false };
   closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
     this.setState({ closeOnEscape, closeOnDimmerClick, open: true });
@@ -32,7 +31,6 @@ export default class CreateObjectiveModal extends Component {
   };
 
   render() {
-    //testing modal:
     const { open, closeOnEscape, closeOnDimmerClick } = this.state;
     return (
         <div>
