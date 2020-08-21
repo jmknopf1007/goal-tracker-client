@@ -41,5 +41,3 @@ const Objective = (props) => {
 }
 
 export default Objective
-
-
