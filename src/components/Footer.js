@@ -18,7 +18,7 @@ const Footer = props => {
         </Container>
         </Segment>
     </div>
-  );
-};
+  )
+}
 
 export default Footer
