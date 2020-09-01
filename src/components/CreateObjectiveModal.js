@@ -4,34 +4,34 @@ import {Button, Form, Modal} from 'semantic-ui-react'
 const INITIAL_STATE = {
   title: "",
   open: false
-};
+}
 
 export default class CreateObjectiveModal extends Component {
-  state = { open: false };
+  state = { open: false }
   closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
-    this.setState({ closeOnEscape, closeOnDimmerClick, open: true });
-  };
-  close = () => this.setState({ open: false });
+    this.setState({ closeOnEscape, closeOnDimmerClick, open: true })
+  }
+  close = () => this.setState({ open: false })
   //-------------------------------------------
-  state = INITIAL_STATE;
+  state = INITIAL_STATE
 
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
+    this.setState({ [e.target.name]: e.target.value })
+  }
 
   handleFormSubmit = e => {
     // debugger;
-    e.preventDefault();
+    e.preventDefault()
     this.props.createObjective({
         title: this.state.title,
         complete_status: false,
         user_id: this.props.user.id
-    });
-    this.setState(INITIAL_STATE);
-  };
+    })
+    this.setState(INITIAL_STATE)
+  }
 
   render() {
-    const { open, closeOnEscape, closeOnDimmerClick } = this.state;
+    const { open, closeOnEscape, closeOnDimmerClick } = this.state
     return (
         <div>
         {/* {console.log(this.props)} */}

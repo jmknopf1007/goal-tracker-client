@@ -5,31 +5,31 @@ export default class EditObjectiveModal extends Component {
   state = { 
       title: this.props.objective.title,
       open: false
-     };
+     }
 
   closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
-    this.setState({ closeOnEscape, closeOnDimmerClick, open: true, title: this.props.objective.title});
-  };
-  close = () => this.setState({ open: false});
+    this.setState({ closeOnEscape, closeOnDimmerClick, open: true, title: this.props.objective.title})
+  }
+  close = () => this.setState({ open: false })
 
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
+    this.setState({ [e.target.name]: e.target.value })
+  }
 
   handleFormSubmit = e => {
     // debugger;
-    e.preventDefault();
+    e.preventDefault()
     this.props.editObjective({
         title: this.state.title,
         complete_status: false,
         user_id: this.props.user.id,
         id: this.props.objective.id
-    });
+    })
     this.setState({ open: false })
-  };
+  }
 
   render() {
-    const { open, closeOnEscape, closeOnDimmerClick } = this.state;
+    const { open, closeOnEscape, closeOnDimmerClick } = this.state
     return (
       <div>
         <Button

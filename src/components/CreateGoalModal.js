@@ -7,7 +7,7 @@ const INITIAL_STATE = {
     category: ""
   },
   open: false
-};
+}
 
 const categoryOptions = [
   {
@@ -35,40 +35,40 @@ const categoryOptions = [
 
 
 export default class CreateGoalModal extends Component {
-  state = { open: false };
+  state = { open: false }
   closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
-    this.setState({ closeOnEscape, closeOnDimmerClick, open: true });
-  };
-  close = () => this.setState({ open: false });
+    this.setState({ closeOnEscape, closeOnDimmerClick, open: true })
+  }
+  close = () => this.setState({ open: false })
   //-------------------------------------------
-  state = INITIAL_STATE;
+  state = INITIAL_STATE
 
 
 
   handleCatChange = (e, { value }) => {
-    // console.log(value);
+    // console.log(value)
     this.setState({ data: {category: value} })
   }
 
   handleChange = (e) => {
     // console.log(value)
-    this.setState({ [e.target.name]: e.target.value });
-  };
+    this.setState({ [e.target.name]: e.target.value })
+  }
 
   handleFormSubmit = e => {
     // debugger;
-    e.preventDefault();
+    e.preventDefault()
     this.props.createGoal({
       description: this.state.description,
       category: this.state.data.category,
       complete_status: false,
       day_count: 0
-    });
-    this.setState(INITIAL_STATE);
-  };
+    })
+    this.setState(INITIAL_STATE)
+  }
 
   render() {
-    const { open, closeOnEscape, closeOnDimmerClick, value } = this.state;
+    const { open, closeOnEscape, closeOnDimmerClick, value } = this.state
     return (
       <div>
         <Button

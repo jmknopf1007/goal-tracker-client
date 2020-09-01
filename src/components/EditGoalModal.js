@@ -29,36 +29,36 @@ export default class EditGoalModal extends Component {
   state = { 
       description: this.props.goal.description,
       data: {category: this.props.goal.category},
-      open: false };
+      open: false }
 
   closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
-    this.setState({ closeOnEscape, closeOnDimmerClick, open: true, description: this.props.goal.description, category: this.props.goal.category });
-  };
-  close = () => this.setState({ open: false });
+    this.setState({ closeOnEscape, closeOnDimmerClick, open: true, description: this.props.goal.description, category: this.props.goal.category })
+  }
+  close = () => this.setState({ open: false })
 
   handleCatChange = (e, { value }) => {
-    console.log(value);
+    console.log(value)
     this.setState({ data: {category: value} }, () => console.log(this.state))
   }
 
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
+    this.setState({ [e.target.name]: e.target.value })
+  }
   handleFormSubmit = e => {
     // debugger;
-    e.preventDefault();
+    e.preventDefault()
     this.props.editGoal({
       description: this.state.description,
       data: this.state.data,
       complete_status: false,
       day_count: 0,
       id: this.props.goal.id
-    });
-    this.setState({ open: false });
-  };
+    })
+    this.setState({ open: false })
+  }
 
   render() {
-    const { open, closeOnEscape, closeOnDimmerClick } = this.state;
+    const { open, closeOnEscape, closeOnDimmerClick } = this.state
     return (
       <div>
         <Button
