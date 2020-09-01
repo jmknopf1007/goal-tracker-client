@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import { Button, Form, Modal } from "semantic-ui-react";
+import React, {Component} from 'react'
+import {Button, Form, Modal} from 'semantic-ui-react'
 
 export default class EditObjectiveModal extends Component {
   state = { 
@@ -76,6 +76,6 @@ export default class EditObjectiveModal extends Component {
           </Modal.Actions>
         </Modal>
       </div>
-    );
+    )
   }
 }

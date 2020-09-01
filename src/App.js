@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React, {Component} from 'react'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import ObjectivesContainer from './containers/ObjectivesContainer'
 import GoalsContainer from './containers/GoalsContainer'
 import Navbar from './components/Navbar'
@@ -7,8 +7,8 @@ import Home from './components/Home'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import Footer from './components/Footer'
-import { api } from './services/api'
-import './App.css';
+import {api} from './services/api'
+import './App.css'
 
 const INITIAL_STATE = {
   user: {}
@@ -155,7 +155,7 @@ class App extends Component {
             />
         </div>
       </Router>
-    );
+    )
   }
 
 

@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import { Button, Form, Modal, Dropdown } from "semantic-ui-react";
+import React, {Component} from 'react'
+import {Button, Form, Modal, Dropdown} from 'semantic-ui-react'
 
   const categoryOptions = [
     {
@@ -113,6 +113,6 @@ export default class EditGoalModal extends Component {
           </Modal.Actions>
         </Modal>
       </div>
-    );
+    )
   }
 }

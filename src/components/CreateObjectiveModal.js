@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import { Button, Form, Modal } from "semantic-ui-react";
+import React, {Component} from 'react'
+import {Button, Form, Modal} from 'semantic-ui-react'
 
 const INITIAL_STATE = {
   title: "",
@@ -79,7 +79,7 @@ export default class CreateObjectiveModal extends Component {
           </Modal.Actions>
         </Modal>
       </div>
-    );
+    )
   }
 }
 

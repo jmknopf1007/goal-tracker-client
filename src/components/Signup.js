@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import { Form, Button, Grid, Header } from 'semantic-ui-react';
+import React, {Component} from 'react'
+import {Form, Button, Grid, Header} from 'semantic-ui-react'
 import {Link, Redirect} from 'react-router-dom'
-import { api } from '../services/api'
+import {api} from '../services/api'
 
 class Signup extends Component {
   state = {

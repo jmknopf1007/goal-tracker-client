@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import { Button, Form, Modal, Dropdown } from "semantic-ui-react";
+import React, {Component} from 'react'
+import {Button, Form, Modal, Dropdown} from 'semantic-ui-react'
 
 const INITIAL_STATE = {
   description: "",
@@ -131,6 +131,6 @@ export default class CreateGoalModal extends Component {
           </Modal.Actions>
         </Modal>
       </div>
-    );
+    )
   }
 }

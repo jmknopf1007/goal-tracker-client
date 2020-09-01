@@ -1,6 +1,6 @@
 import React from 'react'
 import Goal from '../components/Goal'
-import { Card } from 'semantic-ui-react'
+import {Card} from 'semantic-ui-react'
 import CreateGoalModal from '../components/CreateGoalModal'
 
 

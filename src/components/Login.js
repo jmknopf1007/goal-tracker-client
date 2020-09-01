@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
-import {Redirect} from 'react-router-dom'
-import {Form, Button, Grid, Header} from 'semantic-ui-react';
-import {Link} from 'react-router-dom'
+import React, {Component} from 'react'
+import {Link, Redirect} from 'react-router-dom'
+import {Form, Button, Grid, Header} from 'semantic-ui-react'
 
 class Login extends Component {
   state = {
