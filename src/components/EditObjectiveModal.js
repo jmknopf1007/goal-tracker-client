@@ -8,7 +8,7 @@ export default class EditObjectiveModal extends Component {
      }
 
   closeConfigShow = (closeOnEscape, closeOnDimmerClick) => () => {
-    this.setState({ closeOnEscape, closeOnDimmerClick, open: true, title: this.props.objective.title})
+    this.setState({ closeOnEscape, closeOnDimmerClick, open: true, title: this.props.objective.title })
   }
   close = () => this.setState({ open: false })
 
