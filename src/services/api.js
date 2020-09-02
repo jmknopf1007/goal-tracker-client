@@ -64,7 +64,7 @@ const postGoal = (goal) => {
 
 const patchGoal = (goal) => {
   // console.log(objective)
-  console.log(goal)
+  //console.log(goal)
   return fetch(`${API_ROOT}/goals/${goal.id}`, {
     method: 'PATCH',
     headers: { "Content-Type": "application/json", "Accept": "application/json" },
@@ -76,7 +76,7 @@ const patchGoal = (goal) => {
 
 const patchThisGoal = (goal) => {
   // console.log(objective)
-  console.log(goal)
+  //console.log(goal)
   return fetch(`${API_ROOT}/goals/${goal.id}`, {
     method: 'PATCH',
     headers: { "Content-Type": "application/json", "Accept": "application/json" },
