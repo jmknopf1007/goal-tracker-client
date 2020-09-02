@@ -16,13 +16,13 @@ const login = data => { //data needs to have EXACTLY a username and a password
     method: 'POST',
     headers: headers(),
     body: JSON.stringify(data)
-  }).then(res => res.json())
+  }).then(r => r.json())
 }
 
 const getCurrentUser = () => {
   return fetch(`${API_ROOT}/api/v1/current_user`, {
     headers: headers()
-  }).then(res => res.json())
+  }).then(r => r.json())
 }
 
 const postUser = user =>
