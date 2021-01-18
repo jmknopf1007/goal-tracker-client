@@ -38,7 +38,7 @@ The program is built to guide you through:<br>
 
 ## Project Status
 
-For the next version of this app I would like to add a Completed Objectives page.<br>
-This page will document all of the completed objectives/ goals for a specific user,<br>
+For the next version of this app I would like to add a "completed objectives" page.<br>
+This page will document all of the completed objectives/goals for a specific user,<br>
 and also have charts, graphs, and other visual elements to provide further analysis<br>
 on a user's progress with each of their objectives.  
