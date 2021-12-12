@@ -95,7 +95,7 @@ body {
   pointer-events: none;
  } */
 
-/* The below css makes the image on the homepage spin */
+/* This CSS makes the logo on the home page spin */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -112,7 +112,7 @@ body {
   }
 }
 
-/* The below css makes the background image scroll infinitely */
+/* This CSS makes the background image scroll infinitely */
 
 .home {
    /* background:url("/space-photo.jpeg"); */
